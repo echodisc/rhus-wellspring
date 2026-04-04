@@ -1,82 +1,110 @@
 
 
-## Find Ro Website Revamp — Plan
+## Enhanced Design Revamp — Alive-Inspired Warm Aesthetic
 
-### Concept
+### Design Inspiration from Alive Tantra Festival
+The key elements to borrow: **mottled/gradient warm backgrounds** (that smoky peach-orange cloud effect), **cards that fade-in as they scroll into view** ("manifest" effect), generous whitespace, and a very personal/embodied visual language.
 
-A warm, SEO-heavy wellness website targeting women 25-45 in Aarhus dealing with stress/anxiety. Long-form landing page plus several near-duplicate "service" pages to create site depth and multiple H1 opportunities.
+### Color Palette Shift
+Update `index.css` CSS variables to warmer beige/Montessori therapy tones:
+- **Background**: warm off-white `#F7F3EE` (beige linen)
+- **Card**: slightly darker cream `#EDE8E1`
+- **Primary**: warm sage `hsl(155, 15%, 42%)`
+- **Secondary**: muted dusty rose `hsl(12, 35%, 68%)`
+- **Accent**: soft burnt sienna/terracotta `hsl(22, 45%, 58%)`
+- **New**: mottled gradient accent sections using radial gradients of peach-orange-cream (CSS, not images)
 
-### Site Structure (Single React app, client-side routing)
+### Mottled Background Sections
+Create a reusable CSS class and/or component for "mottled warm" backgrounds — using layered radial gradients in peach/terracotta/cream to mimic the Alive cloudy-warm effect. Apply to:
+- Hero sections (as overlay behind text)
+- CTA banners
+- Accent divider sections
+- Some card hover states as subtle backdrop
 
-**Pages:**
+Implementation: CSS utility classes in `index.css` like `.bg-mottled-warm` using multiple `radial-gradient` layers with warm oranges, peach, and cream at various positions/opacities.
 
-1. **/ (Landing page)** — Long-scroll SEO powerhouse
-2. **/kropsterapi** — Dedicated body therapy page (unique H1)
-3. **/stress-og-angst** — Stress & anxiety specialty page (unique H1)
-4. **/om-ida** — About / personal story page
-5. **/priser** — Pricing & packages
-6. **/kontakt** — Contact with embedded booking
-7. **/klientudtalelser** — Testimonials page (unique H1)
+### Scroll-Triggered Fade-In Animations
+Create a `FadeInOnScroll` wrapper component using Intersection Observer API (no extra library). Cards, sections, and images "manifest" into view as user scrolls:
+- Fade up + slight scale from 0.96 to 1
+- Staggered delay for card grids (each card appears 100ms after the previous)
+- Smooth 0.6s ease-out transition
 
-Pages 2, 3, and 7 reuse similar content/components but each has a distinct H1, intro paragraph, and meta description for SEO depth.
+### Image Heroes on Key Pages
+Upgrade `Hero.tsx` to accept an optional `backgroundImage` prop:
+- Full-width background with warm semi-transparent gradient overlay (the mottled peach effect)
+- Text remains readable via overlay
 
-### Landing Page Sections (top to bottom)
+**Page hero images:**
+- **Homepage**: `Find-Ro-2.jpg` with mottled warm overlay
+- **Kropsterapi**: `kropsterapibillede.jpg`
+- **Stress & Angst**: `massage-1024x632.jpg`
+- **Om Ida**: Keep split-layout but use real portrait `profilbillede-1536x2048.jpg`
 
-1. **Hero** — Emotional headline (H1: "Kropsterapi i Aarhus — Slip fri af stress og angst"), subtext, CTA button
-2. **Problem/Empathy** — "Kender du det?" section addressing pain points
-3. **Services overview** — Cards for Kropsterapi, Stress & Angst, Yoga with links to sub-pages
-4. **About Ida** — Photo, short bio, trust signals
-5. **How it works** — 3-step process (Book → Behandling → Forandring)
-6. **Testimonials** — Client quotes carousel
-7. **FAQ** — Accordion with long-tail keyword answers
-8. **CTA / Contact** — Phone number, booking link, location (Aarhus)
-9. **Footer** — Nav links, contact info, social
+Simpler text heroes for: Priser, Kontakt, Klientudtalelser (but with mottled background instead of flat `bg-card`).
 
-### Design Direction
+### Logo Integration
+- Replace "Find Ro" text in Navbar and Footer with `Logoside-edited.png`
+- Sized appropriately (~40px height in nav)
 
-- **Palette**: Warm earthy tones — sage greens, soft terracotta, warm cream backgrounds, muted gold accents
-- **Typography**: Serif headings (elegant, personal), clean sans-serif body text
-- **Imagery**: Placeholder sections for nature/body therapy imagery
-- **Feel**: Organic, warm, trustworthy — not clinical or overly minimal. Rounded corners, soft shadows, generous whitespace
+### Copy Images to Public
+Move all photos from `photos for findro/` to `public/images/` for web serving.
 
-### SEO Strategy (built into the code)
+### Mobile Dot Carousel
+New `DotCarousel.tsx` component:
+- Swipeable via touch events
+- Dot indicators below (filled dot = active, outline = inactive)
+- Uses `useIsMobile()` hook — renders carousel on mobile, grid on desktop
+- Applied to: testimonials on homepage, service cards on homepage, all testimonials on Klientudtalelser
 
-- Semantic HTML: proper H1-H3 hierarchy per page
-- Meta title + description per route (react-helmet-async)
-- Schema.org JSON-LD for LocalBusiness + HealthAndBeautyBusiness
-- Danish language content throughout
-- Each sub-page targets a distinct keyword cluster:
-  - Landing: "kropsterapi aarhus"
-  - /kropsterapi: "kropsterapi behandling aarhus"
-  - /stress-og-angst: "stress behandling aarhus" / "angst terapi aarhus"
-  - /klientudtalelser: "kropsterapi anmeldelser aarhus"
+### Real Testimonials
+Replace placeholder quotes with the actual ones from the RTF:
+- **Hester**: "Ida er en kompetent og kærlig behandler..."
+- **Anders**: "Idas løbende behandlinger har hjulpet mig..."
+- **Isabella**: "Min hidtidige rejse i følelser, krop og tanker..."
+- **Klaus**: "Wow for en oplevelse! Tusind tak..."
 
-### Technical Implementation
+### Om Ida — Real Bio + Visual Timeline
+Replace placeholder with actual Ida bio from RTF. Add `TimelineSection.tsx`:
+- Vertical timeline with dots and connecting line
+- Education milestones: 2020 (Lærer + 100t yoga), 2022 (200t yoga Rishikesh), 2024 (Kropsterapeut Totum, Kenshô, Myofascial), 2025 (Patologi, Anatomikurser)
+- Inline photos: `profilbillede-1536x2048.jpg` as main portrait, `yoga-ved-Ganges-1024x768.jpg` alongside Rishikesh entry
+- Mottled warm background behind timeline section
 
-1. Install `react-helmet-async` for per-page meta tags
-2. Create shared layout component (Navbar + Footer)
-3. Build reusable section components (Hero, TestimonialCard, ServiceCard, FAQ accordion, CTABanner)
-4. Create 7 page components with route-specific H1s and meta
-5. Add JSON-LD structured data in index.html
-6. Update index.html with Danish lang, proper title, and OG tags
-7. Update CSS theme with the warm earthy palette
-8. Clean up App.css defaults
+### Kropsterapi — Massage vs Body Therapy Section
+New two-column comparison section from RTF content:
+- Left: "Oliemassage" — focus on relaxation, muscles, pleasant experience
+- Right: "Kropsterapi" — focus on nervous system, emotions, deep transformation
+- Tagline: "Oliemassage giver afspænding. Kropsterapi giver forløsning."
+- Treatment photos: `kropsterapibillede.jpg`, `find-ro-4.jpg`
 
-### File Plan
+### Homepage Value Expansion
+Add a "Forestil dig..." (Imagine...) section after the "Kender du det?" section:
+- Forward-looking transformation copy: "Forestil dig at vågne udhvilet... at trække vejret dybt... at føle dig hjemme i din krop"
+- Mottled warm accent background
+- This complements the pain-point section with aspiration
 
-- `src/components/Layout.tsx` — Navbar + Footer wrapper
-- `src/components/Hero.tsx` — Reusable hero with props
-- `src/components/ServiceCard.tsx`
-- `src/components/TestimonialCard.tsx`
-- `src/components/FAQSection.tsx`
-- `src/components/CTABanner.tsx`
-- `src/components/ProcessSteps.tsx`
-- `src/pages/Index.tsx` — Long landing page
-- `src/pages/Kropsterapi.tsx`
-- `src/pages/StressOgAngst.tsx`
-- `src/pages/OmIda.tsx`
-- `src/pages/Priser.tsx`
-- `src/pages/Kontakt.tsx`
-- `src/pages/Klientudtalelser.tsx`
-- Updated `src/App.tsx`, `src/index.css`, `index.html`
+### Photo Integration Across Pages
+- **StressOgAngst**: Add `massage-1024x632.jpg` inline in intro section
+- **Kontakt**: Add treatment space photo (`find-ro-4.jpg`) alongside contact info
+- **Priser**: Subtle photo accent at top
+- **Klientudtalelser**: Hero area with treatment space ambiance
+
+### Files Changed
+
+1. **Copy images**: `photos for findro/*` → `public/images/`
+2. **`src/index.css`**: Warmer palette + `.bg-mottled-warm` utility + fade-in keyframes
+3. **`tailwind.config.ts`**: Add fade-in-up animation variants with stagger support
+4. **`src/components/FadeInOnScroll.tsx`**: New — Intersection Observer wrapper with stagger
+5. **`src/components/DotCarousel.tsx`**: New — mobile swipeable carousel with dot indicators
+6. **`src/components/TimelineSection.tsx`**: New — Ida's education timeline
+7. **`src/components/Hero.tsx`**: Add `backgroundImage` prop with mottled overlay
+8. **`src/components/Layout.tsx`**: Logo image in navbar + footer
+9. **`src/components/CTABanner.tsx`**: Mottled warm background
+10. **`src/pages/Index.tsx`**: Image hero, real testimonials, "Forestil dig" section, mobile carousels, fade-in animations, real photos
+11. **`src/pages/OmIda.tsx`**: Real bio, real portrait, education timeline, India photos
+12. **`src/pages/Kropsterapi.tsx`**: Image hero, massage vs therapy comparison, treatment photos
+13. **`src/pages/StressOgAngst.tsx`**: Image hero, inline photos
+14. **`src/pages/Klientudtalelser.tsx`**: Real testimonials, mobile carousel, mottled hero
+15. **`src/pages/Kontakt.tsx`**: Treatment space photo
+16. **`src/pages/Priser.tsx`**: Mottled accent hero
 
