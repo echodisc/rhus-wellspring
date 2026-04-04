@@ -26,44 +26,97 @@ const Hero = ({
   mottled = false,
   tall = false,
 }: HeroProps) => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const [bgOffset, setBgOffset] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setBgOffset(window.scrollY * 0.15);
-    };
+    if (!tall) return;
+    const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [tall]);
+
+  if (tall) {
+    // Hero is fixed, but moves at 10% speed — so content (speed=1) overtakes it
+    return (
+      <>
+        <div
+          className="fixed inset-0 z-0 overflow-hidden"
+          style={{
+            transform: `translateY(-${scrollY * 0.1}px)`,
+            willChange: "transform",
+          }}
+        >
+          {backgroundImage ? (
+            <>
+              <div
+                className="absolute inset-0 bg-cover bg-center"
+                style={{ backgroundImage: `url(${backgroundImage})` }}
+              />
+              <div className="absolute inset-0 bg-background/70" />
+            </>
+          ) : (
+            <div className={`absolute inset-0 ${mottled ? "bg-mottled-peach" : "bg-card"}`} />
+          )}
+
+          {/* Text lives inside the fixed layer so it also starts fixed... */}
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-center max-w-3xl px-4">
+              <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-6 tracking-[0.04em]">
+                {title}
+              </h1>
+              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto font-light">
+                {subtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <Link
+                  to={ctaLink}
+                  className="inline-flex items-center border border-foreground/30 px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                >
+                  {ctaText}
+                </Link>
+                {showSecondary && (
+                  <Link
+                    to={secondaryLink}
+                    className="inline-flex items-center px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground/70 hover:text-foreground transition-colors"
+                  >
+                    {secondaryText}
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+
+          {/* Breathing dots */}
+          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
+            <span className="w-1.5 h-1.5 rounded-full bg-foreground/20 animate-[pulse_3s_ease-in-out_infinite]" />
+            <span className="w-2 h-2 rounded-full bg-foreground/30 animate-[pulse_3s_ease-in-out_0.4s_infinite]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-foreground/20 animate-[pulse_3s_ease-in-out_0.8s_infinite]" />
+          </div>
+        </div>
+
+        {/* Spacer — the next card (z-10, bg-background) will scroll over the hero */}
+        <div className="h-[100vh]" />
+      </>
+    );
+  }
 
   return (
     <section
-      ref={heroRef}
-      className={`relative overflow-hidden ${tall ? "min-h-[85vh] flex items-center" : "py-28 md:py-40"} ${
+      className={`relative overflow-hidden py-28 md:py-40 ${
         backgroundImage ? "" : mottled ? "bg-mottled-peach" : "bg-card"
       }`}
     >
       {backgroundImage && (
         <>
           <div
-            className="absolute inset-0 bg-cover bg-center will-change-transform"
-            style={{
-              backgroundImage: `url(${backgroundImage})`,
-              transform: `translateY(-${bgOffset}px)`,
-              top: "-10%",
-              bottom: "-10%",
-            }}
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
           />
           <div className="absolute inset-0 bg-background/70" />
         </>
       )}
 
-      {!backgroundImage && (
-        <div className={`absolute inset-0 ${mottled ? "bg-mottled-peach" : "bg-card"}`} />
-      )}
-
-      <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl py-28 md:py-40">
+      <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
         <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-6 tracking-[0.04em]">
           {title}
         </h1>
@@ -86,15 +139,6 @@ const Hero = ({
             </Link>
           )}
         </div>
-
-        {/* Scroll hint — breathing lotus dots */}
-        {tall && (
-          <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-foreground/20 animate-[pulse_3s_ease-in-out_infinite]" />
-            <span className="w-2 h-2 rounded-full bg-foreground/30 animate-[pulse_3s_ease-in-out_0.4s_infinite]" />
-            <span className="w-1.5 h-1.5 rounded-full bg-foreground/20 animate-[pulse_3s_ease-in-out_0.8s_infinite]" />
-          </div>
-        )}
       </div>
     </section>
   );
