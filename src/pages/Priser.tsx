@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import CTABanner from "@/components/CTABanner";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { Check } from "lucide-react";
+import { Link } from "react-router-dom";
 
 interface PricingCardProps {
   title: string;
@@ -14,35 +15,35 @@ interface PricingCardProps {
 
 const PricingCard = ({ title, price, unit, features, highlighted }: PricingCardProps) => (
   <div
-    className={`rounded-xl border p-8 flex flex-col ${
+    className={`p-8 md:p-10 flex flex-col ${
       highlighted
-        ? "border-primary bg-primary/5 shadow-lg"
-        : "border-border bg-card"
+        ? "bg-primary/5 border border-primary/10"
+        : "bg-card"
     }`}
   >
-    <h3 className="font-serif text-xl font-semibold mb-2">{title}</h3>
+    <h3 className="font-heading text-base tracking-[0.06em] mb-3">{title}</h3>
     <div className="mb-6">
-      <span className="text-3xl font-bold text-foreground">{price}</span>
+      <span className="font-heading text-2xl text-foreground">{price}</span>
       <span className="text-sm text-muted-foreground ml-1">{unit}</span>
     </div>
     <ul className="space-y-3 flex-1 mb-8">
       {features.map((f, i) => (
         <li key={i} className="flex items-start gap-2.5">
-          <Check size={16} className="text-primary mt-0.5 shrink-0" />
-          <span className="text-sm text-muted-foreground">{f}</span>
+          <Check size={14} strokeWidth={1.5} className="text-primary mt-0.5 shrink-0" />
+          <span className="text-sm text-muted-foreground font-light">{f}</span>
         </li>
       ))}
     </ul>
-    <a
-      href="/kontakt"
-      className={`block text-center rounded-lg px-6 py-3 text-sm font-medium transition-colors ${
+    <Link
+      to="/kontakt"
+      className={`block text-center px-6 py-4 text-xs tracking-[0.15em] uppercase transition-all duration-300 ${
         highlighted
-          ? "bg-primary text-primary-foreground hover:bg-primary/90"
-          : "border border-border text-foreground hover:bg-muted"
+          ? "border border-foreground/30 text-foreground hover:bg-foreground hover:text-background"
+          : "border border-border text-foreground/60 hover:text-foreground hover:border-foreground/30"
       }`}
     >
       Book nu
-    </a>
+    </Link>
   </div>
 );
 
@@ -57,18 +58,18 @@ const Priser = () => (
       <link rel="canonical" href="https://find-ro.dk/priser" />
     </Helmet>
 
-    <section className="py-20 md:py-28 bg-mottled-warm">
+    <section className="py-28 md:py-40 bg-mottled-warm">
       <div className="container mx-auto px-4 text-center max-w-2xl">
-        <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Priser</h1>
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <h1 className="font-heading text-3xl md:text-4xl font-light tracking-[0.04em] mb-4">Priser</h1>
+        <p className="text-muted-foreground leading-relaxed font-light">
           Transparent prissætning. Ingen skjulte gebyrer. Investér i din krop og dit velvære.
         </p>
       </div>
     </section>
 
-    <section className="py-16 md:py-24">
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40 max-w-5xl mx-auto">
           <FadeInOnScroll delay={0}>
             <PricingCard
               title="Enkeltsession"
@@ -112,8 +113,8 @@ const Priser = () => (
             />
           </FadeInOnScroll>
         </div>
-        <div className="text-center mt-10">
-          <p className="text-sm text-muted-foreground">
+        <div className="text-center mt-12">
+          <p className="text-sm text-muted-foreground font-light">
             Første samtale er altid uforpligtende. Ring eller book online for at komme i gang.
           </p>
         </div>

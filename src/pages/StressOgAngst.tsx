@@ -7,6 +7,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import PullQuote from "@/components/PullQuote";
 import IntroSession from "@/components/IntroSession";
+import ParallaxImage from "@/components/ParallaxImage";
 import { ShieldCheck, Moon, HeartPulse, Wind } from "lucide-react";
 
 const approaches = [
@@ -74,19 +75,19 @@ const StressOgAngst = () => (
     />
 
     {/* Intro */}
-    <section className="py-20 md:py-32">
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">
+              <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] mb-6">
                 Stress og angst sidder i kroppen
               </h2>
-              <p className="text-muted-foreground leading-relaxed text-lg mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4 font-light">
                 Du kender det sikkert: hjertet banker, vejrtrækningen er kort, skuldrene sidder oppe ved
                 ørerne. Stress og angst er ikke bare "noget i hovedet" — det er en kropslig tilstand.
               </p>
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <p className="text-muted-foreground leading-relaxed font-light">
                 Hos Find Ro i Aarhus arbejder vi med det autonome nervesystem for at hjælpe din krop
                 ud af alarmberedskab og ind i en tilstand af ro og genopretning.
               </p>
@@ -96,13 +97,16 @@ const StressOgAngst = () => (
             <img
               src="/images/find-ro-4.jpg"
               alt="Behandling mod stress og angst hos Find Ro"
-              className="rounded-2xl w-full aspect-[4/3] object-cover shadow-md"
+              className="w-full aspect-[4/3] object-cover"
               loading="lazy"
             />
           </FadeInOnScroll>
         </div>
       </div>
     </section>
+
+    {/* Parallax divider */}
+    <ParallaxImage src="/images/yoga-ved-Ganges-1024x768.jpg" alt="Yoga i Indien" height="min-h-[45vh]" />
 
     {/* Pull Quote */}
     <PullQuote
@@ -112,20 +116,21 @@ const StressOgAngst = () => (
     />
 
     {/* Approach cards */}
-    <section className="py-20 md:py-32 bg-card">
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl font-semibold text-center mb-14">Min tilgang</h2>
+          <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Tilgang</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">Min tilgang til stress og angst</h2>
         </FadeInOnScroll>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {approaches.map((a, i) => (
             <FadeInOnScroll key={i} delay={i * 100}>
-              <div className="rounded-xl border border-border bg-background p-7">
-                <div className="w-11 h-11 rounded-full bg-secondary/15 flex items-center justify-center mb-4">
-                  <a.icon size={22} className="text-secondary" />
+              <div className="p-8 md:p-10 bg-card">
+                <div className="w-10 h-10 flex items-center justify-center mb-5">
+                  <a.icon size={22} strokeWidth={1.2} className="text-foreground/40" />
                 </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">{a.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{a.text}</p>
+                <h3 className="font-heading text-base tracking-[0.06em] mb-3">{a.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">{a.text}</p>
               </div>
             </FadeInOnScroll>
           ))}
@@ -133,18 +138,17 @@ const StressOgAngst = () => (
       </div>
     </section>
 
-    {/* Intro Session */}
     <IntroSession />
 
     {/* Testimonials */}
-    <section className="py-20 md:py-32">
+    <section className="py-24 md:py-40 bg-card">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl font-semibold text-center mb-10">
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-12">
             Andre der fandt ro
           </h2>
         </FadeInOnScroll>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
           <FadeInOnScroll delay={0}>
             <TestimonialCard
               quote="Ida er en kompetent og kærlig behandler. Sidst jeg var hos Ida kom jeg med et kaotisk sind og en urolig krop. Takket være Idas rolige, medfølende behandling gik jeg derfra med en dybere vejrtrækning og en fredfyldt energi."
