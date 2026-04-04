@@ -96,7 +96,7 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="border-t border-border/40 mt-0">
+  <footer className="border-t border-border/40 mt-0 bg-background relative z-10">
     <div className="container mx-auto px-4 py-16">
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
@@ -150,7 +150,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => (
   <div className="min-h-screen flex flex-col">
     <Navbar />
-    <main className="flex-1 relative z-10 bg-background">{children}</main>
+    <main className="flex-1 relative z-10">{children}</main>
     <Footer />
   </div>
 );

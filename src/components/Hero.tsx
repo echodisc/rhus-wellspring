@@ -40,7 +40,7 @@ const Hero = ({
       <>
         {/* Fixed slow-drift background — z-0 */}
         <div
-          className="fixed inset-0 z-0 overflow-hidden"
+          className="fixed inset-0 overflow-hidden"
           style={{
             transform: `translateY(-${scrollY * 0.1}px)`,
             willChange: "transform",
@@ -60,7 +60,7 @@ const Hero = ({
         </div>
 
         {/* Normal-flow spacer with text — scrolls at speed=1 */}
-        <div className="h-[100vh] relative z-[1] flex flex-col items-center justify-center">
+        <div className="h-[100vh] relative flex flex-col items-center justify-center">
           <div className="text-center max-w-3xl px-4">
             <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-6 tracking-[0.04em]">
               {title}
