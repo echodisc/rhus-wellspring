@@ -111,8 +111,8 @@ const Index = () => (
       tall
     />
 
-    {/* Problem Cards */}
-    <section className="py-24 md:py-40 bg-background">
+    {/* Problem Cards — USP section */}
+    <section className="relative z-[1] py-24 md:py-40 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Jeg hjælper dig, der oplever</p>
@@ -141,11 +141,8 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Parallax divider 1 */}
-    <ParallaxImage src="/images/yoga-ved-Ganges-1024x768.jpg" alt="Yoga ved Ganges — Find Ro" />
-
     {/* Forestil dig... */}
-    <section className="py-24 md:py-40 bg-mottled-warm">
+    <section className="relative z-[1] py-24 md:py-40 bg-mottled-warm">
       <div className="container mx-auto px-4 max-w-3xl text-center">
         <FadeInOnScroll>
           <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] mb-10">Forestil dig...</h2>
@@ -163,7 +160,7 @@ const Index = () => (
     </section>
 
     {/* Services */}
-    <section className="py-24 md:py-40 bg-background">
+    <section className="relative z-[1] py-24 md:py-40 bg-background">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Behandlinger</p>
@@ -202,7 +199,7 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Parallax divider 2 */}
+    {/* Parallax divider */}
     <ParallaxImage src="/images/find-ro-4.jpg" alt="Behandling hos Find Ro" />
 
     {/* Pull Quote */}
@@ -213,7 +210,7 @@ const Index = () => (
     />
 
     {/* About Ida */}
-    <section className="py-24 md:py-40 bg-background">
+    <section className="relative z-[1] py-24 md:py-40 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
@@ -248,7 +245,7 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Parallax divider 3 */}
+    {/* Parallax divider */}
     <ParallaxImage src="/images/cacao_ceremony.jpg" alt="Ida Sohn — cacao ceremony" height="min-h-[40vh]" />
 
     {/* Process Steps */}
@@ -258,7 +255,7 @@ const Index = () => (
     <IntroSession />
 
     {/* Testimonials */}
-    <section className="py-24 md:py-40 bg-card">
+    <section className="relative z-[1] py-24 md:py-40 bg-card">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Udtalelser</p>
