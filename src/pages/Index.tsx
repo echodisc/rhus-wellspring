@@ -112,7 +112,7 @@ const Index = () => (
     />
 
     {/* Problem Cards */}
-    <section className="py-24 md:py-40">
+    <section className="py-24 md:py-40 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Jeg hjælper dig, der oplever</p>
@@ -163,7 +163,7 @@ const Index = () => (
     </section>
 
     {/* Services */}
-    <section className="py-24 md:py-40">
+    <section className="py-24 md:py-40 bg-background">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Behandlinger</p>
@@ -213,7 +213,7 @@ const Index = () => (
     />
 
     {/* About Ida */}
-    <section className="py-24 md:py-40">
+    <section className="py-24 md:py-40 bg-background">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
