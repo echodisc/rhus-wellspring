@@ -40,7 +40,7 @@ const Hero = ({
       <>
         {/* Fixed slow-drift background — z-0 */}
         <div
-          className="fixed inset-0 -z-10 overflow-hidden"
+          className="fixed inset-0 overflow-hidden"
           style={{
             transform: `translateY(-${scrollY * 0.1}px)`,
             willChange: "transform",
