@@ -5,6 +5,8 @@ import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
 import TestimonialCard from "@/components/TestimonialCard";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import PullQuote from "@/components/PullQuote";
+import IntroSession from "@/components/IntroSession";
 import { ShieldCheck, Moon, HeartPulse, Wind } from "lucide-react";
 
 const approaches = [
@@ -68,10 +70,11 @@ const StressOgAngst = () => (
       title="Stress behandling & angst terapi i Aarhus"
       subtitle="Når stress og angst har sat sig i kroppen, er det kroppen der holder nøglen til forandring."
       backgroundImage="/images/massage-1024x632.jpg"
+      tall
     />
 
-    {/* Intro with photo */}
-    <section className="py-16 md:py-24">
+    {/* Intro */}
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
@@ -101,11 +104,18 @@ const StressOgAngst = () => (
       </div>
     </section>
 
+    {/* Pull Quote */}
+    <PullQuote
+      quote="Du fortjener at leve uden konstant uro. Det starter med at lytte til kroppen."
+      author="Ida Sohn"
+      background="warm"
+    />
+
     {/* Approach cards */}
-    <section className="py-16 md:py-24 bg-card">
+    <section className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl font-semibold text-center mb-12">Min tilgang</h2>
+          <h2 className="font-serif text-3xl font-semibold text-center mb-14">Min tilgang</h2>
         </FadeInOnScroll>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
           {approaches.map((a, i) => (
@@ -123,8 +133,11 @@ const StressOgAngst = () => (
       </div>
     </section>
 
+    {/* Intro Session */}
+    <IntroSession />
+
     {/* Testimonials */}
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
           <h2 className="font-serif text-3xl font-semibold text-center mb-10">
