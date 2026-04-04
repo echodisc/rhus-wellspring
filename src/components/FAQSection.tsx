@@ -17,7 +17,7 @@ interface FAQSectionProps {
 }
 
 const FAQSection = ({ title = "Ofte stillede spørgsmål", items }: FAQSectionProps) => (
-  <section className="py-24 md:py-40">
+  <section className="py-24 md:py-40 bg-background">
     <div className="container mx-auto px-4 max-w-3xl">
       <FadeInOnScroll>
         <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-14">{title}</h2>
