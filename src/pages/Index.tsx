@@ -8,8 +8,10 @@ import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import DotCarousel from "@/components/DotCarousel";
-import { Heart, Brain, Flower2 } from "lucide-react";
+import PullQuote from "@/components/PullQuote";
+import IntroSession from "@/components/IntroSession";
 import { Link } from "react-router-dom";
+import { Frown, HeartCrack, Unplug } from "lucide-react";
 
 const testimonials = [
   {
@@ -65,6 +67,27 @@ const faqItems = [
   },
 ];
 
+const problemCards = [
+  {
+    icon: Frown,
+    title: "Stress & spændinger",
+    text: "Din krop er i konstant alarmberedskab. Skuldrene sidder oppe ved ørerne, og du kan ikke slappe af — selv når du prøver.",
+    link: "/stress-og-angst",
+  },
+  {
+    icon: HeartCrack,
+    title: "Angst & uro",
+    text: "Hjertet banker, maven knuger sig sammen, og tankerne kører i ring. Du føler dig fanget i en krop der ikke vil finde ro.",
+    link: "/stress-og-angst",
+  },
+  {
+    icon: Unplug,
+    title: "Manglende kontakt til kroppen",
+    text: "Du lever 'oppe i hovedet' og har mistet forbindelsen til din krop, dine følelser og din intuition.",
+    link: "/kropsterapi",
+  },
+];
+
 const Index = () => (
   <Layout>
     <Helmet>
@@ -76,7 +99,7 @@ const Index = () => (
       <link rel="canonical" href="https://find-ro.dk/" />
     </Helmet>
 
-    {/* Hero with background image */}
+    {/* Tall Hero */}
     <Hero
       title="Kropsterapi i Aarhus — Slip fri af stress og angst"
       subtitle="Oplev en dybere forbindelse til din krop og find ro i en travl hverdag. Professionel og personlig kropsterapi i hjertet af Aarhus."
@@ -84,27 +107,41 @@ const Index = () => (
       secondaryText="Læs mere om kropsterapi"
       secondaryLink="/kropsterapi"
       backgroundImage="/images/Find-Ro-2.jpg"
+      tall
     />
 
-    {/* Problem/Empathy */}
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4 max-w-3xl text-center">
+    {/* "Jeg hjælper dig" Problem Cards */}
+    <section className="py-20 md:py-32">
+      <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">Kender du det?</h2>
-          <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
-            <p>Du vågner om morgenen med spændinger i kroppen, selvom du har sovet hele natten.</p>
-            <p>Tankerne kører i ring, og du kan ikke finde ro — hverken i kroppen eller hovedet.</p>
-            <p>Du har prøvet at "tage dig sammen", men stressen sidder fast i kroppen.</p>
-          </div>
-          <p className="mt-8 text-foreground font-medium text-lg">
-            Du er ikke alene. Og der <em>er</em> en vej til forandring.
-          </p>
+          <p className="text-sm tracking-widest uppercase text-primary text-center mb-4">Jeg hjælper dig, der oplever</p>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-14">
+            Kender du det?
+          </h2>
         </FadeInOnScroll>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {problemCards.map((card, i) => (
+            <FadeInOnScroll key={i} delay={i * 120}>
+              <Link
+                to={card.link}
+                className="group block rounded-xl border border-border bg-card p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="w-12 h-12 rounded-full bg-secondary/15 flex items-center justify-center mb-5">
+                  <card.icon size={24} className="text-secondary" />
+                </div>
+                <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                  {card.title}
+                </h3>
+                <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
+              </Link>
+            </FadeInOnScroll>
+          ))}
+        </div>
       </div>
     </section>
 
-    {/* Forestil dig... — Aspirational value section */}
-    <section className="py-16 md:py-24 bg-mottled-warm">
+    {/* Forestil dig... — Aspirational */}
+    <section className="py-20 md:py-32 bg-mottled-warm">
       <div className="container mx-auto px-4 max-w-3xl text-center">
         <FadeInOnScroll>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-8">Forestil dig...</h2>
@@ -121,14 +158,14 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Services */}
-    <section className="py-16 md:py-24">
+    {/* Services with images */}
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
             Behandlinger
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
+          <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto">
             Skræddersyede behandlinger der møder dig, hvor du er
           </p>
         </FadeInOnScroll>
@@ -136,7 +173,7 @@ const Index = () => (
           <DotCarousel desktopCols={3}>
             <FadeInOnScroll delay={0}>
               <ServiceCard
-                icon={Heart}
+                image="/images/kropsterapibillede.jpg"
                 title="Kropsterapi"
                 description="Helhedsorienteret behandling der løsner op for kropslige spændinger og skaber balance i nervesystemet."
                 link="/kropsterapi"
@@ -144,7 +181,7 @@ const Index = () => (
             </FadeInOnScroll>
             <FadeInOnScroll delay={120}>
               <ServiceCard
-                icon={Brain}
+                image="/images/massage-1024x632.jpg"
                 title="Stress & Angst"
                 description="Specialiseret behandling for dig der oplever stress, angst eller uro i hverdagen. Baseret på kropslig tilgang."
                 link="/stress-og-angst"
@@ -152,7 +189,7 @@ const Index = () => (
             </FadeInOnScroll>
             <FadeInOnScroll delay={240}>
               <ServiceCard
-                icon={Flower2}
+                image="/images/yoga-for-alle.jpg"
                 title="Yoga & Åndedræt"
                 description="Bløde yoga- og åndedrætsøvelser der supplerer kropsterapien og giver dig redskaber til hverdagen."
                 link="/kontakt"
@@ -163,8 +200,15 @@ const Index = () => (
       </div>
     </section>
 
-    {/* About Ida with real photo */}
-    <section className="py-16 md:py-24 bg-card">
+    {/* Pull Quote */}
+    <PullQuote
+      quote="Jeg har selv stået der — med en krop i alarmberedskab og tanker der aldrig stoppede. Det er den oplevelse, der driver mig."
+      author="Ida Sohn"
+      background="sage"
+    />
+
+    {/* About Ida */}
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
@@ -205,14 +249,17 @@ const Index = () => (
     {/* Process Steps */}
     <ProcessSteps />
 
+    {/* Intro Session Conversion */}
+    <IntroSession />
+
     {/* Testimonials */}
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
             Det siger mine klienter
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
+          <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto">
             Ægte udtalelser fra mennesker der har fundet ro gennem kropsterapi
           </p>
         </FadeInOnScroll>

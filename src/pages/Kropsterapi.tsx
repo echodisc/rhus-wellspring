@@ -6,6 +6,8 @@ import CTABanner from "@/components/CTABanner";
 import ProcessSteps from "@/components/ProcessSteps";
 import TestimonialCard from "@/components/TestimonialCard";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import PullQuote from "@/components/PullQuote";
+import IntroSession from "@/components/IntroSession";
 import { Check } from "lucide-react";
 
 const benefits = [
@@ -55,10 +57,11 @@ const Kropsterapi = () => (
       title="Kropsterapi behandling i Aarhus"
       subtitle="En helhedsorienteret behandlingsform der arbejder med din krops naturlige evne til at hele og finde balance."
       backgroundImage="/images/kropsterapibillede.jpg"
+      tall
     />
 
     {/* What is Kropsterapi */}
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <FadeInOnScroll>
@@ -97,8 +100,15 @@ const Kropsterapi = () => (
       </div>
     </section>
 
+    {/* Pull Quote */}
+    <PullQuote
+      quote="Gennem kroppen kan vi nå ind til de lag, som samtale alene ikke altid kan nå."
+      author="Ida Sohn"
+      background="peach"
+    />
+
     {/* Massage vs Kropsterapi comparison */}
-    <section className="py-16 md:py-24 bg-mottled-warm">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 max-w-4xl">
         <FadeInOnScroll>
           <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
@@ -149,8 +159,8 @@ const Kropsterapi = () => (
       </div>
     </section>
 
-    {/* Treatment photo */}
-    <section className="py-16 md:py-24">
+    {/* Treatment photos */}
+    <section className="py-20 md:py-32 bg-mottled-warm">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           <FadeInOnScroll>
@@ -175,8 +185,11 @@ const Kropsterapi = () => (
 
     <ProcessSteps />
 
-    {/* Testimonial highlight */}
-    <section className="py-16 md:py-24">
+    {/* Intro Session */}
+    <IntroSession />
+
+    {/* Testimonial */}
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 max-w-3xl">
         <FadeInOnScroll>
           <h2 className="font-serif text-3xl font-semibold text-center mb-10">

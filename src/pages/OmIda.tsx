@@ -3,6 +3,7 @@ import Layout from "@/components/Layout";
 import CTABanner from "@/components/CTABanner";
 import TimelineSection from "@/components/TimelineSection";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
+import PullQuote from "@/components/PullQuote";
 import { GraduationCap, Award, Heart } from "lucide-react";
 
 const credentials = [
@@ -35,7 +36,7 @@ const OmIda = () => (
     </Helmet>
 
     {/* Hero */}
-    <section className="py-20 md:py-28 bg-mottled-peach">
+    <section className="py-24 md:py-36 bg-mottled-peach">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
@@ -63,8 +64,15 @@ const OmIda = () => (
       </div>
     </section>
 
+    {/* Pull Quote */}
+    <PullQuote
+      quote="Jeg har dedikeret mit liv til at hjælpe andre med at finde den samme ro og forbindelse til kroppen, som jeg selv fandt."
+      author="Ida Sohn"
+      background="sage"
+    />
+
     {/* Story */}
-    <section className="py-16 md:py-24">
+    <section className="py-20 md:py-32">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
@@ -104,10 +112,10 @@ const OmIda = () => (
     <TimelineSection />
 
     {/* Credentials */}
-    <section className="py-16 md:py-24 bg-card">
+    <section className="py-20 md:py-32 bg-card">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl font-semibold text-center mb-12">
+          <h2 className="font-serif text-3xl font-semibold text-center mb-14">
             Baggrund & kompetencer
           </h2>
         </FadeInOnScroll>

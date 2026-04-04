@@ -30,9 +30,9 @@ const Navbar = () => {
         <ul className="hidden md:flex items-center gap-6">
           {navLinks.map((l) => (
             <li key={l.to}>
-              <Link
+                <Link
                 to={l.to}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide"
               >
                 {l.label}
               </Link>

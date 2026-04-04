@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ChevronDown } from "lucide-react";
 
 interface HeroProps {
   title: string;
@@ -10,6 +11,7 @@ interface HeroProps {
   secondaryLink?: string;
   backgroundImage?: string;
   mottled?: boolean;
+  tall?: boolean;
 }
 
 const Hero = ({
@@ -22,11 +24,12 @@ const Hero = ({
   secondaryLink = "/kropsterapi",
   backgroundImage,
   mottled = false,
+  tall = false,
 }: HeroProps) => (
   <section
-    className={`relative overflow-hidden py-24 md:py-36 ${
-      backgroundImage ? "" : mottled ? "bg-mottled-peach" : "bg-card"
-    }`}
+    className={`relative overflow-hidden ${
+      tall ? "min-h-[80vh] flex items-center" : "py-24 md:py-36"
+    } ${backgroundImage ? "" : mottled ? "bg-mottled-peach" : "bg-card"}`}
   >
     {backgroundImage && (
       <>
@@ -34,13 +37,12 @@ const Hero = ({
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         />
-        {/* Warm mottled overlay */}
         <div className="absolute inset-0 bg-mottled-peach opacity-85" />
         <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/50" />
       </>
     )}
 
-    <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
+    <div className={`container mx-auto px-4 relative z-10 text-center max-w-3xl ${tall ? "py-24 md:py-36" : ""}`}>
       <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
         {title}
       </h1>
@@ -64,6 +66,13 @@ const Hero = ({
         )}
       </div>
     </div>
+
+    {/* Scroll indicator for tall heroes */}
+    {tall && (
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
+        <ChevronDown size={28} className="text-foreground/40" />
+      </div>
+    )}
   </section>
 );
 
