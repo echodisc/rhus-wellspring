@@ -9,30 +9,29 @@ const navLinks = [
   { to: "/om-ida", label: "Om Ida" },
   { to: "/priser", label: "Priser" },
   { to: "/klientudtalelser", label: "Udtalelser" },
-  { to: "/kontakt", label: "Kontakt" },
 ];
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-      <div className="container mx-auto flex items-center justify-between py-3 px-4">
+    <nav className="sticky top-0 z-50 bg-background/90 backdrop-blur-md border-b border-border/40">
+      <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <Link to="/" className="flex items-center">
           <img
             src="/images/Logoside-edited.png"
             alt="Find Ro — Kropsterapi i Aarhus"
-            className="h-10 md:h-12 w-auto"
+            className="h-8 md:h-10 w-auto"
           />
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-6">
+        <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((l) => (
             <li key={l.to}>
-                <Link
+              <Link
                 to={l.to}
-                className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors tracking-wide"
+                className="text-[11px] font-light tracking-[0.12em] uppercase text-foreground/70 hover:text-foreground transition-colors"
               >
                 {l.label}
               </Link>
@@ -41,9 +40,9 @@ const Navbar = () => {
           <li>
             <Link
               to="/kontakt"
-              className="ml-2 inline-flex items-center rounded-lg bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+              className="text-[11px] font-light tracking-[0.12em] uppercase text-foreground/70 hover:text-foreground transition-colors"
             >
-              Book en tid
+              Booking
             </Link>
           </li>
         </ul>
@@ -54,20 +53,27 @@ const Navbar = () => {
           onClick={() => setOpen(!open)}
           aria-label="Toggle menu"
         >
-          {open ? <X size={24} /> : <Menu size={24} />}
+          {open ? <X size={22} /> : <Menu size={22} />}
         </button>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — full screen overlay */}
       {open && (
-        <div className="md:hidden border-t border-border bg-background px-4 pb-6">
-          <ul className="flex flex-col gap-3 pt-4">
+        <div className="md:hidden fixed inset-0 z-50 bg-background flex flex-col items-center justify-center">
+          <button
+            className="absolute top-4 right-4 p-2 text-foreground"
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+          >
+            <X size={22} />
+          </button>
+          <ul className="flex flex-col items-center gap-6">
             {navLinks.map((l) => (
               <li key={l.to}>
                 <Link
                   to={l.to}
                   onClick={() => setOpen(false)}
-                  className="block py-2 text-foreground/80 hover:text-primary transition-colors"
+                  className="text-sm tracking-[0.12em] uppercase text-foreground/80 hover:text-foreground transition-colors"
                 >
                   {l.label}
                 </Link>
@@ -77,9 +83,9 @@ const Navbar = () => {
               <Link
                 to="/kontakt"
                 onClick={() => setOpen(false)}
-                className="mt-2 block text-center rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground"
+                className="mt-4 inline-flex items-center border border-foreground/30 px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all"
               >
-                Book en tid
+                Booking
               </Link>
             </li>
           </ul>
@@ -90,56 +96,48 @@ const Navbar = () => {
 };
 
 const Footer = () => (
-  <footer className="bg-card border-t border-border mt-16">
-    <div className="container mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <div>
+  <footer className="border-t border-border/40 mt-0">
+    <div className="container mx-auto px-4 py-16">
+      <div className="max-w-4xl mx-auto">
+        <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
           <img
             src="/images/Logoside-edited.png"
             alt="Find Ro"
-            className="h-10 w-auto mb-4"
+            className="h-8 w-auto"
           />
-          <p className="text-sm text-muted-foreground leading-relaxed">
-            Kropsterapi i Aarhus med fokus på stress, angst og kropslige spændinger. En tryg og
-            personlig tilgang til din krop og dit sind.
-          </p>
-        </div>
-        <div>
-          <h4 className="font-serif text-lg font-medium mb-3">Sider</h4>
-          <ul className="space-y-2 text-sm text-muted-foreground">
+          <ul className="flex flex-wrap gap-6">
             {navLinks.map((l) => (
               <li key={l.to}>
-                <Link to={l.to} className="hover:text-primary transition-colors">
+                <Link
+                  to={l.to}
+                  className="text-[11px] tracking-[0.1em] uppercase text-muted-foreground hover:text-foreground transition-colors"
+                >
                   {l.label}
                 </Link>
               </li>
             ))}
           </ul>
         </div>
-        <div>
-          <h4 className="font-serif text-lg font-medium mb-3">Kontakt</h4>
-          <ul className="space-y-3 text-sm text-muted-foreground">
-            <li className="flex items-center gap-2">
-              <Phone size={16} className="text-secondary" />
-              <a href="tel:+4512345678" className="hover:text-primary transition-colors">
-                +45 12 34 56 78
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <Mail size={16} className="text-secondary" />
-              <a href="mailto:ida@find-ro.dk" className="hover:text-primary transition-colors">
-                ida@find-ro.dk
-              </a>
-            </li>
-            <li className="flex items-center gap-2">
-              <MapPin size={16} className="text-secondary" />
-              <span>Aarhus C, Danmark</span>
-            </li>
-          </ul>
+
+        <div className="border-t border-border/40 pt-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="flex flex-col sm:flex-row gap-6 text-sm text-muted-foreground">
+            <a href="tel:+4512345678" className="flex items-center gap-2 hover:text-foreground transition-colors">
+              <Phone size={14} />
+              +45 12 34 56 78
+            </a>
+            <a href="mailto:ida@find-ro.dk" className="flex items-center gap-2 hover:text-foreground transition-colors">
+              <Mail size={14} />
+              ida@find-ro.dk
+            </a>
+            <span className="flex items-center gap-2">
+              <MapPin size={14} />
+              Aarhus C
+            </span>
+          </div>
+          <p className="text-xs text-muted-foreground/60">
+            © {new Date().getFullYear()} Find Ro
+          </p>
         </div>
-      </div>
-      <div className="mt-10 pt-6 border-t border-border text-center text-xs text-muted-foreground">
-        © {new Date().getFullYear()} Find Ro — Kropsterapi i Aarhus. Alle rettigheder forbeholdes.
       </div>
     </div>
   </footer>
@@ -152,7 +150,7 @@ interface LayoutProps {
 const Layout = ({ children }: LayoutProps) => (
   <div className="min-h-screen flex flex-col">
     <Navbar />
-    <main className="flex-1">{children}</main>
+    <main className="flex-1 relative z-10 bg-background">{children}</main>
     <Footer />
   </div>
 );

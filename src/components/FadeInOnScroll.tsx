@@ -21,7 +21,7 @@ const FadeInOnScroll = ({ children, delay = 0, className = "" }: FadeInOnScrollP
           observer.unobserve(el);
         }
       },
-      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+      { threshold: 0.1, rootMargin: "0px 0px -30px 0px" }
     );
 
     observer.observe(el);
@@ -34,8 +34,8 @@ const FadeInOnScroll = ({ children, delay = 0, className = "" }: FadeInOnScrollP
       className={className}
       style={{
         opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0) scale(1)" : "translateY(24px) scale(0.96)",
-        transition: `opacity 0.7s ease-out ${delay}ms, transform 0.7s ease-out ${delay}ms`,
+        transform: visible ? "translateY(0) scale(1)" : "translateY(18px) scale(0.98)",
+        transition: `opacity 0.8s ease-out ${delay}ms, transform 0.8s ease-out ${delay}ms`,
       }}
     >
       {children}

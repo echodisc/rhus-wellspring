@@ -1,5 +1,5 @@
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
 
 interface HeroProps {
   title: string;
@@ -17,63 +17,83 @@ interface HeroProps {
 const Hero = ({
   title,
   subtitle,
-  ctaText = "Book en tid",
+  ctaText = "BOOK EN TID",
   ctaLink = "/kontakt",
   showSecondary = false,
-  secondaryText = "Læs mere",
+  secondaryText = "LÆS MERE",
   secondaryLink = "/kropsterapi",
   backgroundImage,
   mottled = false,
   tall = false,
-}: HeroProps) => (
-  <section
-    className={`relative overflow-hidden ${
-      tall ? "min-h-[80vh] flex items-center" : "py-24 md:py-36"
-    } ${backgroundImage ? "" : mottled ? "bg-mottled-peach" : "bg-card"}`}
-  >
-    {backgroundImage && (
-      <>
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${backgroundImage})` }}
-        />
-        <div className="absolute inset-0 bg-mottled-peach opacity-85" />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/50" />
-      </>
-    )}
+}: HeroProps) => {
+  const heroRef = useRef<HTMLDivElement>(null);
+  const [scrollY, setScrollY] = useState(0);
 
-    <div className={`container mx-auto px-4 relative z-10 text-center max-w-3xl ${tall ? "py-24 md:py-36" : ""}`}>
-      <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
-        {title}
-      </h1>
-      <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">
-        {subtitle}
-      </p>
-      <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-        <Link
-          to={ctaLink}
-          className="inline-flex items-center rounded-lg bg-primary px-8 py-3.5 text-base font-medium text-primary-foreground hover:bg-primary/90 transition-colors shadow-md"
-        >
-          {ctaText}
-        </Link>
-        {showSecondary && (
+  useEffect(() => {
+    if (!tall) return;
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [tall]);
+
+  const parallaxStyle = tall
+    ? { transform: `translateY(${scrollY * 0.4}px)` }
+    : {};
+
+  return (
+    <section
+      ref={heroRef}
+      className={`relative overflow-hidden ${
+        tall ? "min-h-[85vh] flex items-center" : "py-28 md:py-40"
+      } ${backgroundImage ? "" : mottled ? "bg-mottled-peach" : "bg-card"}`}
+      style={tall ? { ...parallaxStyle, willChange: "transform" } : {}}
+    >
+      {backgroundImage && (
+        <>
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{ backgroundImage: `url(${backgroundImage})` }}
+          />
+          <div className="absolute inset-0 bg-background/70" />
+        </>
+      )}
+
+      <div className={`container mx-auto px-4 relative z-10 text-center max-w-3xl ${tall ? "py-28 md:py-40" : ""}`}>
+        <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-6 tracking-[0.04em]">
+          {title}
+        </h1>
+        <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto font-light">
+          {subtitle}
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
-            to={secondaryLink}
-            className="inline-flex items-center rounded-lg border border-border px-8 py-3.5 text-base font-medium text-foreground hover:bg-muted transition-colors"
+            to={ctaLink}
+            className="inline-flex items-center border border-foreground/30 px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
           >
-            {secondaryText}
+            {ctaText}
           </Link>
-        )}
+          {showSecondary && (
+            <Link
+              to={secondaryLink}
+              className="inline-flex items-center px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground/70 hover:text-foreground transition-colors"
+            >
+              {secondaryText}
+            </Link>
+          )}
+        </div>
       </div>
-    </div>
 
-    {/* Scroll indicator for tall heroes */}
-    {tall && (
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 animate-bounce">
-        <ChevronDown size={28} className="text-foreground/40" />
-      </div>
-    )}
-  </section>
-);
+      {/* Scroll indicator */}
+      {tall && (
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-0">
+          <div className="w-px h-10 bg-foreground/20" />
+          <div className="w-1.5 h-1.5 rounded-full bg-foreground/30 mt-1" />
+        </div>
+      )}
+    </section>
+  );
+};
 
 export default Hero;
