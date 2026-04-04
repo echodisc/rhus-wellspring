@@ -4,83 +4,83 @@
 
 @layer base {
   :root {
-    --background: 39 33% 96%;
-    --foreground: 20 12% 20%;
+    --background: 30 25% 95%;
+    --foreground: 20 12% 18%;
 
-    --card: 39 30% 93%;
-    --card-foreground: 20 12% 20%;
+    --card: 30 20% 91%;
+    --card-foreground: 20 12% 18%;
 
-    --popover: 39 33% 96%;
-    --popover-foreground: 20 12% 20%;
+    --popover: 30 25% 95%;
+    --popover-foreground: 20 12% 18%;
 
-    --primary: 150 18% 38%;
-    --primary-foreground: 39 33% 96%;
+    --primary: 155 15% 40%;
+    --primary-foreground: 30 25% 96%;
 
-    --secondary: 16 45% 65%;
-    --secondary-foreground: 39 33% 96%;
+    --secondary: 12 35% 68%;
+    --secondary-foreground: 30 25% 96%;
 
-    --muted: 39 20% 90%;
-    --muted-foreground: 20 8% 45%;
+    --muted: 30 15% 88%;
+    --muted-foreground: 20 8% 42%;
 
-    --accent: 40 40% 55%;
-    --accent-foreground: 20 12% 15%;
+    --accent: 22 45% 55%;
+    --accent-foreground: 20 12% 12%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 150 18% 38%;
+    --border: 28 12% 82%;
+    --input: 28 12% 82%;
+    --ring: 155 15% 40%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 39 30% 93%;
-    --sidebar-foreground: 20 12% 20%;
-    --sidebar-primary: 150 18% 38%;
-    --sidebar-primary-foreground: 39 33% 96%;
-    --sidebar-accent: 39 20% 90%;
-    --sidebar-accent-foreground: 20 12% 20%;
-    --sidebar-border: 30 15% 85%;
-    --sidebar-ring: 150 18% 38%;
+    --sidebar-background: 30 20% 91%;
+    --sidebar-foreground: 20 12% 18%;
+    --sidebar-primary: 155 15% 40%;
+    --sidebar-primary-foreground: 30 25% 96%;
+    --sidebar-accent: 30 15% 88%;
+    --sidebar-accent-foreground: 20 12% 18%;
+    --sidebar-border: 28 12% 82%;
+    --sidebar-ring: 155 15% 40%;
   }
 
   .dark {
     --background: 20 15% 12%;
-    --foreground: 39 30% 90%;
+    --foreground: 30 20% 90%;
 
     --card: 20 12% 16%;
-    --card-foreground: 39 30% 90%;
+    --card-foreground: 30 20% 90%;
 
     --popover: 20 15% 12%;
-    --popover-foreground: 39 30% 90%;
+    --popover-foreground: 30 20% 90%;
 
-    --primary: 150 22% 50%;
+    --primary: 155 20% 48%;
     --primary-foreground: 20 15% 10%;
 
-    --secondary: 16 40% 55%;
-    --secondary-foreground: 39 33% 96%;
+    --secondary: 12 32% 55%;
+    --secondary-foreground: 30 25% 96%;
 
     --muted: 20 10% 22%;
-    --muted-foreground: 39 15% 60%;
+    --muted-foreground: 30 12% 58%;
 
-    --accent: 40 35% 50%;
-    --accent-foreground: 39 30% 90%;
+    --accent: 22 40% 48%;
+    --accent-foreground: 30 20% 90%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 20 10% 25%;
     --input: 20 10% 25%;
-    --ring: 150 22% 50%;
+    --ring: 155 20% 48%;
 
     --sidebar-background: 20 12% 14%;
-    --sidebar-foreground: 39 30% 90%;
-    --sidebar-primary: 150 22% 50%;
+    --sidebar-foreground: 30 20% 90%;
+    --sidebar-primary: 155 20% 48%;
     --sidebar-primary-foreground: 20 15% 10%;
     --sidebar-accent: 20 10% 22%;
-    --sidebar-accent-foreground: 39 30% 90%;
+    --sidebar-accent-foreground: 30 20% 90%;
     --sidebar-border: 20 10% 25%;
-    --sidebar-ring: 150 22% 50%;
+    --sidebar-ring: 155 20% 48%;
   }
 }
 
@@ -96,5 +96,33 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .bg-mottled-warm {
+    background:
+      radial-gradient(ellipse 80% 60% at 20% 30%, hsl(16 50% 80% / 0.35), transparent),
+      radial-gradient(ellipse 60% 80% at 80% 70%, hsl(28 55% 78% / 0.3), transparent),
+      radial-gradient(ellipse 50% 50% at 50% 50%, hsl(35 40% 85% / 0.25), transparent),
+      radial-gradient(ellipse 70% 40% at 70% 20%, hsl(12 40% 82% / 0.2), transparent),
+      hsl(var(--background));
+  }
+
+  .bg-mottled-peach {
+    background:
+      radial-gradient(ellipse 90% 70% at 15% 40%, hsl(16 55% 78% / 0.4), transparent),
+      radial-gradient(ellipse 70% 90% at 85% 60%, hsl(25 50% 75% / 0.35), transparent),
+      radial-gradient(ellipse 60% 60% at 45% 80%, hsl(35 45% 82% / 0.3), transparent),
+      radial-gradient(ellipse 80% 50% at 60% 15%, hsl(10 42% 80% / 0.25), transparent),
+      hsl(30 22% 92%);
+  }
+
+  .bg-mottled-sage {
+    background:
+      radial-gradient(ellipse 80% 60% at 25% 35%, hsl(155 18% 75% / 0.3), transparent),
+      radial-gradient(ellipse 60% 80% at 75% 65%, hsl(30 30% 82% / 0.25), transparent),
+      radial-gradient(ellipse 50% 50% at 50% 50%, hsl(35 25% 88% / 0.2), transparent),
+      hsl(var(--background));
   }
 }
