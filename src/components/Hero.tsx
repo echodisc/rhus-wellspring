@@ -36,9 +36,9 @@ const Hero = ({
   }, [tall]);
 
   if (tall) {
-    // Hero is fixed, but moves at 10% speed — so content (speed=1) overtakes it
     return (
       <>
+        {/* Fixed slow-drift background — z-0 */}
         <div
           className="fixed inset-0 z-0 overflow-hidden"
           style={{
@@ -57,32 +57,32 @@ const Hero = ({
           ) : (
             <div className={`absolute inset-0 ${mottled ? "bg-mottled-peach" : "bg-card"}`} />
           )}
+        </div>
 
-          {/* Text lives inside the fixed layer so it also starts fixed... */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center max-w-3xl px-4">
-              <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-6 tracking-[0.04em]">
-                {title}
-              </h1>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto font-light">
-                {subtitle}
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        {/* Normal-flow spacer with text — scrolls at speed=1 */}
+        <div className="h-[100vh] relative z-[1] flex flex-col items-center justify-center">
+          <div className="text-center max-w-3xl px-4">
+            <h1 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light text-foreground leading-tight mb-6 tracking-[0.04em]">
+              {title}
+            </h1>
+            <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-12 max-w-2xl mx-auto font-light">
+              {subtitle}
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <Link
+                to={ctaLink}
+                className="inline-flex items-center border border-foreground/30 px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+              >
+                {ctaText}
+              </Link>
+              {showSecondary && (
                 <Link
-                  to={ctaLink}
-                  className="inline-flex items-center border border-foreground/30 px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+                  to={secondaryLink}
+                  className="inline-flex items-center px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground/70 hover:text-foreground transition-colors"
                 >
-                  {ctaText}
+                  {secondaryText}
                 </Link>
-                {showSecondary && (
-                  <Link
-                    to={secondaryLink}
-                    className="inline-flex items-center px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground/70 hover:text-foreground transition-colors"
-                  >
-                    {secondaryText}
-                  </Link>
-                )}
-              </div>
+              )}
             </div>
           </div>
 
@@ -93,9 +93,6 @@ const Hero = ({
             <span className="w-1.5 h-1.5 rounded-full bg-foreground/20 animate-[pulse_3s_ease-in-out_0.8s_infinite]" />
           </div>
         </div>
-
-        {/* Spacer — the next card (z-10, bg-background) will scroll over the hero */}
-        <div className="h-[100vh]" />
       </>
     );
   }
