@@ -4,6 +4,7 @@ import CTABanner from "@/components/CTABanner";
 import TimelineSection from "@/components/TimelineSection";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import PullQuote from "@/components/PullQuote";
+import ParallaxImage from "@/components/ParallaxImage";
 import { GraduationCap, Award, Heart } from "lucide-react";
 
 const credentials = [
@@ -36,25 +37,26 @@ const OmIda = () => (
     </Helmet>
 
     {/* Hero */}
-    <section className="py-24 md:py-36 bg-mottled-peach">
+    <section className="py-28 md:py-44 bg-mottled-peach">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
             <img
               src="/images/profilbillede-1536x2048.jpg"
               alt="Ida Sohn — Kropsterapeut i Aarhus"
-              className="rounded-2xl w-full aspect-[3/4] object-cover shadow-lg order-2 md:order-1"
+              className="w-full aspect-[3/4] object-cover order-2 md:order-1"
               loading="lazy"
             />
           </FadeInOnScroll>
           <FadeInOnScroll delay={150} className="order-1 md:order-2">
-            <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-6">Om Ida Sohn</h1>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-4">
+            <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground mb-4">Om mig</p>
+            <h1 className="font-heading text-3xl md:text-4xl font-light tracking-[0.04em] mb-6">Om Ida Sohn</h1>
+            <p className="text-muted-foreground leading-relaxed mb-4 font-light">
               Mit navn er Ida Sohn Jeppesen. Min passion for at hjælpe andre til mental og fysisk
               trivsel er startet ved min egen udviklingsrejse gennem fysiske smerter, stress og
               angst til langt større indre ro.
             </p>
-            <p className="text-muted-foreground leading-relaxed">
+            <p className="text-muted-foreground leading-relaxed font-light">
               Min egen rejse fortsætter altid, da det er en del af livets cykliske bevægelse at
               miste balancen fra tid til anden, men de redskaber, jeg har fundet på vejen til at
               genfinde den, er helt fantastiske.
@@ -72,13 +74,13 @@ const OmIda = () => (
     />
 
     {/* Story */}
-    <section className="py-20 md:py-32">
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
             <div>
-              <h2 className="font-serif text-3xl font-semibold mb-6">Min historie</h2>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] mb-6">Min historie</h2>
+              <div className="space-y-4 text-muted-foreground leading-relaxed font-light">
                 <p>
                   Med mine redskaber, min faglige fundering, forståelse af kroppen og
                   menneskesindet, intuition og mit nærvær oplever jeg virkelig at kunne hjælpe
@@ -100,7 +102,7 @@ const OmIda = () => (
             <img
               src="/images/yoga-ved-Ganges-1024x768.jpg"
               alt="Ida ved Ganges i Rishikesh, Indien"
-              className="rounded-2xl w-full aspect-[4/3] object-cover shadow-md"
+              className="w-full aspect-[4/3] object-cover"
               loading="lazy"
             />
           </FadeInOnScroll>
@@ -108,26 +110,30 @@ const OmIda = () => (
       </div>
     </section>
 
+    {/* Parallax divider */}
+    <ParallaxImage src="/images/cacao_ceremony.jpg" alt="Cacao ceremony — Ida Sohn" height="min-h-[50vh]" />
+
     {/* Timeline */}
     <TimelineSection />
 
     {/* Credentials */}
-    <section className="py-20 md:py-32 bg-card">
+    <section className="py-24 md:py-40 bg-card">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl font-semibold text-center mb-14">
+          <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Baggrund</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">
             Baggrund & kompetencer
           </h2>
         </FadeInOnScroll>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
           {credentials.map((c, i) => (
             <FadeInOnScroll key={i} delay={i * 120}>
               <div className="text-center">
-                <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                  <c.icon size={26} className="text-primary" />
+                <div className="w-12 h-12 flex items-center justify-center mx-auto mb-5">
+                  <c.icon size={24} strokeWidth={1.2} className="text-foreground/40" />
                 </div>
-                <h3 className="font-serif text-lg font-semibold mb-2">{c.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{c.text}</p>
+                <h3 className="font-heading text-base tracking-[0.06em] mb-3">{c.title}</h3>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">{c.text}</p>
               </div>
             </FadeInOnScroll>
           ))}

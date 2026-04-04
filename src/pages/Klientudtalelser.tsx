@@ -39,17 +39,17 @@ const Klientudtalelser = () => (
       <link rel="canonical" href="https://find-ro.dk/klientudtalelser" />
     </Helmet>
 
-    <section className="py-20 md:py-28 bg-mottled-peach">
+    <section className="py-28 md:py-40 bg-mottled-peach">
       <div className="container mx-auto px-4 text-center max-w-2xl">
-        <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Klientudtalelser</h1>
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <h1 className="font-heading text-3xl md:text-4xl font-light tracking-[0.04em] mb-4">Klientudtalelser</h1>
+        <p className="text-muted-foreground leading-relaxed font-light">
           Ægte historier fra mennesker der har fundet ro gennem kropsterapi hos Ida.
         </p>
       </div>
     </section>
 
-    <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4 max-w-6xl">
+    <section className="py-24 md:py-40">
+      <div className="container mx-auto px-4 max-w-5xl">
         <DotCarousel desktopCols={2}>
           {testimonials.map((t, i) => (
             <FadeInOnScroll key={i} delay={i * 100}>

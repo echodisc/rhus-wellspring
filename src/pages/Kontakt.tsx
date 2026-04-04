@@ -14,124 +14,114 @@ const Kontakt = () => (
       <link rel="canonical" href="https://find-ro.dk/kontakt" />
     </Helmet>
 
-    <section className="py-20 md:py-28 bg-mottled-peach">
+    <section className="py-28 md:py-40 bg-mottled-peach">
       <div className="container mx-auto px-4 text-center max-w-2xl">
-        <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Kontakt & Booking</h1>
-        <p className="text-lg text-muted-foreground leading-relaxed">
+        <h1 className="font-heading text-3xl md:text-4xl font-light tracking-[0.04em] mb-4">Kontakt & Booking</h1>
+        <p className="text-muted-foreground leading-relaxed font-light">
           Klar til at tage det første skridt? Ræk ud — jeg svarer gerne på spørgsmål eller hjælper
           dig med at booke din første session.
         </p>
       </div>
     </section>
 
-    <section className="py-16 md:py-24">
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4 max-w-5xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          {/* Contact info + treatment space photo */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-16">
           <FadeInOnScroll>
             <div>
-              <h2 className="font-serif text-2xl font-semibold mb-8">Kontaktoplysninger</h2>
-              <div className="space-y-6 mb-8">
+              <h2 className="font-heading text-xl tracking-[0.04em] mb-10">Kontaktoplysninger</h2>
+              <div className="space-y-8 mb-12">
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Phone size={20} className="text-primary" />
-                  </div>
+                  <Phone size={18} strokeWidth={1.2} className="text-foreground/40 mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-medium mb-1">Telefon</h3>
-                    <a href="tel:+4512345678" className="text-muted-foreground hover:text-primary transition-colors">
+                    <p className="text-xs tracking-[0.1em] uppercase text-foreground/60 mb-1">Telefon</p>
+                    <a href="tel:+4512345678" className="text-foreground hover:text-primary transition-colors">
                       +45 12 34 56 78
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Mail size={20} className="text-primary" />
-                  </div>
+                  <Mail size={18} strokeWidth={1.2} className="text-foreground/40 mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-medium mb-1">Email</h3>
-                    <a href="mailto:ida@find-ro.dk" className="text-muted-foreground hover:text-primary transition-colors">
+                    <p className="text-xs tracking-[0.1em] uppercase text-foreground/60 mb-1">Email</p>
+                    <a href="mailto:ida@find-ro.dk" className="text-foreground hover:text-primary transition-colors">
                       ida@find-ro.dk
                     </a>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <MapPin size={20} className="text-primary" />
-                  </div>
+                  <MapPin size={18} strokeWidth={1.2} className="text-foreground/40 mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-medium mb-1">Adresse</h3>
-                    <p className="text-muted-foreground">Aarhus C, Danmark</p>
+                    <p className="text-xs tracking-[0.1em] uppercase text-foreground/60 mb-1">Adresse</p>
+                    <p className="text-foreground">Aarhus C, Danmark</p>
                     <p className="text-xs text-muted-foreground mt-1">Præcis adresse oplyses ved booking</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
-                  <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                    <Clock size={20} className="text-primary" />
-                  </div>
+                  <Clock size={18} strokeWidth={1.2} className="text-foreground/40 mt-0.5 shrink-0" />
                   <div>
-                    <h3 className="font-medium mb-1">Åbningstider</h3>
-                    <p className="text-muted-foreground">Mandag – Fredag: 9:00 – 17:00</p>
+                    <p className="text-xs tracking-[0.1em] uppercase text-foreground/60 mb-1">Åbningstider</p>
+                    <p className="text-foreground">Mandag – Fredag: 9:00 – 17:00</p>
                     <p className="text-xs text-muted-foreground mt-1">Aftentider efter aftale</p>
                   </div>
                 </div>
               </div>
               <img
-                src="/images/find-ro-4.jpg"
+                src="/images/IMG_20221221_105102-2048x1536.jpg"
                 alt="Behandlingsrum hos Find Ro i Aarhus"
-                className="rounded-2xl w-full aspect-[4/3] object-cover shadow-md"
+                className="w-full aspect-[4/3] object-cover"
                 loading="lazy"
               />
             </div>
           </FadeInOnScroll>
 
-          {/* Contact form */}
           <FadeInOnScroll delay={150}>
-            <div className="bg-card rounded-xl border border-border p-8">
-              <h2 className="font-serif text-2xl font-semibold mb-6">Skriv til mig</h2>
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+            <div className="bg-card p-8 md:p-10">
+              <h2 className="font-heading text-xl tracking-[0.04em] mb-8">Skriv til mig</h2>
+              <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium mb-1.5">Navn</label>
+                  <label htmlFor="name" className="block text-xs tracking-[0.1em] uppercase text-foreground/60 mb-2">Navn</label>
                   <input
                     id="name"
                     type="text"
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full border-b border-border bg-transparent px-0 py-3 text-sm focus:outline-none focus:border-foreground transition-colors"
                     placeholder="Dit fulde navn"
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium mb-1.5">Email</label>
+                  <label htmlFor="email" className="block text-xs tracking-[0.1em] uppercase text-foreground/60 mb-2">Email</label>
                   <input
                     id="email"
                     type="email"
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full border-b border-border bg-transparent px-0 py-3 text-sm focus:outline-none focus:border-foreground transition-colors"
                     placeholder="din@email.dk"
                   />
                 </div>
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium mb-1.5">Telefon (valgfrit)</label>
+                  <label htmlFor="phone" className="block text-xs tracking-[0.1em] uppercase text-foreground/60 mb-2">Telefon (valgfrit)</label>
                   <input
                     id="phone"
                     type="tel"
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring"
+                    className="w-full border-b border-border bg-transparent px-0 py-3 text-sm focus:outline-none focus:border-foreground transition-colors"
                     placeholder="+45 ..."
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-sm font-medium mb-1.5">Besked</label>
+                  <label htmlFor="message" className="block text-xs tracking-[0.1em] uppercase text-foreground/60 mb-2">Besked</label>
                   <textarea
                     id="message"
                     rows={4}
-                    className="w-full rounded-lg border border-input bg-background px-4 py-3 text-sm placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring resize-none"
+                    className="w-full border-b border-border bg-transparent px-0 py-3 text-sm focus:outline-none focus:border-foreground transition-colors resize-none"
                     placeholder="Fortæl mig lidt om hvad du søger hjælp til..."
                   />
                 </div>
                 <button
                   type="submit"
-                  className="w-full rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 transition-colors"
+                  className="w-full border border-foreground/30 px-6 py-4 text-xs tracking-[0.15em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
                 >
                   Send besked
                 </button>
-                <p className="text-xs text-muted-foreground text-center">
+                <p className="text-xs text-muted-foreground text-center font-light">
                   Jeg svarer typisk inden for 24 timer.
                 </p>
               </form>

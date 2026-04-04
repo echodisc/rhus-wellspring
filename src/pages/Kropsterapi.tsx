@@ -8,6 +8,7 @@ import TestimonialCard from "@/components/TestimonialCard";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import PullQuote from "@/components/PullQuote";
 import IntroSession from "@/components/IntroSession";
+import ParallaxImage from "@/components/ParallaxImage";
 import { Check } from "lucide-react";
 
 const benefits = [
@@ -61,36 +62,36 @@ const Kropsterapi = () => (
     />
 
     {/* What is Kropsterapi */}
-    <section className="py-20 md:py-32">
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <FadeInOnScroll>
             <div>
-              <h2 className="font-serif text-3xl font-semibold mb-6">Hvad er kropsterapi?</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] mb-6">Hvad er kropsterapi?</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4 font-light">
                 Kropsterapi er en terapeutisk tilgang der anerkender den dybe forbindelse mellem krop
                 og psyke. Når vi oplever stress, angst eller følelsesmæssige belastninger, sætter det
                 sig i kroppen som spændinger, smerte eller uro.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4 font-light">
                 Gennem kroppen kan vi nå ind til de lag, som samtale alene ikke altid kan nå.
                 Kropsterapi bruger åndedrætsarbejde, tryk, pulseringer, zonepunkter, samtale og
                 grounding til at hjælpe nervesystemet med at regulere sig selv.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed font-light">
                 Hos Find Ro i Aarhus tilbyder jeg en personlig og tryg ramme, hvor du kan lande i
                 kroppen og finde den ro, du har brug for.
               </p>
             </div>
           </FadeInOnScroll>
           <FadeInOnScroll delay={150}>
-            <div className="bg-card rounded-2xl border border-border p-8">
-              <h3 className="font-serif text-xl font-semibold mb-5">Fordele ved kropsterapi</h3>
-              <ul className="space-y-3">
+            <div className="bg-card p-8 md:p-10">
+              <h3 className="font-heading text-base tracking-[0.06em] mb-6">Fordele ved kropsterapi</h3>
+              <ul className="space-y-4">
                 {benefits.map((b, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <Check size={18} className="text-primary mt-0.5 shrink-0" />
-                    <span className="text-sm text-muted-foreground">{b}</span>
+                    <Check size={16} strokeWidth={1.5} className="text-primary mt-0.5 shrink-0" />
+                    <span className="text-sm text-muted-foreground font-light">{b}</span>
                   </li>
                 ))}
               </ul>
@@ -100,6 +101,9 @@ const Kropsterapi = () => (
       </div>
     </section>
 
+    {/* Parallax divider */}
+    <ParallaxImage src="/images/massage-1024x632.jpg" alt="Massage behandling hos Find Ro" />
+
     {/* Pull Quote */}
     <PullQuote
       quote="Gennem kroppen kan vi nå ind til de lag, som samtale alene ikke altid kan nå."
@@ -107,50 +111,50 @@ const Kropsterapi = () => (
       background="peach"
     />
 
-    {/* Massage vs Kropsterapi comparison */}
-    <section className="py-20 md:py-32">
+    {/* Massage vs Kropsterapi */}
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4 max-w-4xl">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-4">
             Oliemassage giver afspænding.<br />Kropsterapi giver forløsning.
           </h2>
-          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          <p className="text-center text-muted-foreground mb-14 max-w-2xl mx-auto font-light">
             Begge behandlinger er nærende og hjælper kroppen til ro – men de har forskellige formål og dybde.
           </p>
         </FadeInOnScroll>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <FadeInOnScroll delay={0}>
-            <div className="rounded-2xl bg-card border border-border p-8 h-full">
-              <h3 className="font-serif text-xl font-semibold mb-4">Oliemassage</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                <strong className="text-foreground">Fokus:</strong> Afspænding, velvære og fysisk lettelse
+            <div className="bg-card p-8 md:p-10 h-full">
+              <h3 className="font-heading text-base tracking-[0.06em] mb-4">Oliemassage</h3>
+              <p className="text-sm text-muted-foreground mb-4 font-light">
+                <strong className="text-foreground font-normal">Fokus:</strong> Afspænding, velvære og fysisk lettelse
               </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
                 <li>• Har brug for at slappe af</li>
                 <li>• Trænger til løsnet muskler og bindevæv</li>
                 <li>• Vil have en behagelig og sanselig oplevelse</li>
                 <li>• Har spændinger i nakke, skuldre, ryg eller lænd</li>
-                <li>• Gerne vil prøve cupping</li>
+                <li>• Gerne vil prøve cupping (bindevævsmassage)</li>
               </ul>
-              <p className="text-xs text-muted-foreground mt-4 italic">
+              <p className="text-xs text-muted-foreground mt-6 italic">
                 En nærende og afslappende kropsbehandling – fokus på muskler, væv og ro.
               </p>
             </div>
           </FadeInOnScroll>
           <FadeInOnScroll delay={150}>
-            <div className="rounded-2xl bg-primary/5 border border-primary/20 p-8 h-full">
-              <h3 className="font-serif text-xl font-semibold mb-4">Kropsterapi</h3>
-              <p className="text-sm text-muted-foreground mb-4">
-                <strong className="text-foreground">Fokus:</strong> Sammenhæng mellem krop, følelser, nervesystem og gamle mønstre
+            <div className="bg-primary/5 border border-primary/10 p-8 md:p-10 h-full">
+              <h3 className="font-heading text-base tracking-[0.06em] mb-4">Kropsterapi</h3>
+              <p className="text-sm text-muted-foreground mb-4 font-light">
+                <strong className="text-foreground font-normal">Fokus:</strong> Sammenhæng mellem krop, følelser, nervesystem og gamle mønstre
               </p>
-              <ul className="space-y-2 text-sm text-muted-foreground">
+              <ul className="space-y-2 text-sm text-muted-foreground font-light">
                 <li>• Har stress, uro, angst der føles "dybere"</li>
                 <li>• Er nysgerrig på sammenhængen mellem krop og psyke</li>
                 <li>• Vil arbejde med indre mønstre og følelser</li>
                 <li>• Ønsker personlig udvikling og mere kontakt til kroppen</li>
                 <li>• Længes efter dyb forløsning og balance i nervesystemet</li>
               </ul>
-              <p className="text-xs text-muted-foreground mt-4 italic">
+              <p className="text-xs text-muted-foreground mt-6 italic">
                 En terapeutisk behandling, hvor krop, åndedræt og følelser inddrages – fokus på indre processer og dyb forandring.
               </p>
             </div>
@@ -159,40 +163,17 @@ const Kropsterapi = () => (
       </div>
     </section>
 
-    {/* Treatment photos */}
-    <section className="py-20 md:py-32 bg-mottled-warm">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <FadeInOnScroll>
-            <img
-              src="/images/find-ro-4.jpg"
-              alt="Kropsterapi behandling hos Find Ro i Aarhus"
-              className="rounded-2xl w-full aspect-[4/3] object-cover shadow-md"
-              loading="lazy"
-            />
-          </FadeInOnScroll>
-          <FadeInOnScroll delay={150}>
-            <img
-              src="/images/massage-1024x632.jpg"
-              alt="Afspændende behandling i trygge omgivelser"
-              className="rounded-2xl w-full aspect-[4/3] object-cover shadow-md"
-              loading="lazy"
-            />
-          </FadeInOnScroll>
-        </div>
-      </div>
-    </section>
+    {/* Parallax divider */}
+    <ParallaxImage src="/images/yoga-for-alle.jpg" alt="Yoga for alle" height="min-h-[40vh]" />
 
     <ProcessSteps />
-
-    {/* Intro Session */}
     <IntroSession />
 
     {/* Testimonial */}
-    <section className="py-20 md:py-32">
+    <section className="py-24 md:py-40 bg-card">
       <div className="container mx-auto px-4 max-w-3xl">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl font-semibold text-center mb-10">
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-12">
             Hvad klienter siger om kropsterapi hos Find Ro
           </h2>
           <TestimonialCard

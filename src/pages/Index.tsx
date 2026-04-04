@@ -10,6 +10,7 @@ import FadeInOnScroll from "@/components/FadeInOnScroll";
 import DotCarousel from "@/components/DotCarousel";
 import PullQuote from "@/components/PullQuote";
 import IntroSession from "@/components/IntroSession";
+import ParallaxImage from "@/components/ParallaxImage";
 import { Link } from "react-router-dom";
 import { Frown, HeartCrack, Unplug } from "lucide-react";
 
@@ -104,18 +105,18 @@ const Index = () => (
       title="Kropsterapi i Aarhus — Slip fri af stress og angst"
       subtitle="Oplev en dybere forbindelse til din krop og find ro i en travl hverdag. Professionel og personlig kropsterapi i hjertet af Aarhus."
       showSecondary
-      secondaryText="Læs mere om kropsterapi"
+      secondaryText="Læs mere"
       secondaryLink="/kropsterapi"
       backgroundImage="/images/Find-Ro-2.jpg"
       tall
     />
 
-    {/* "Jeg hjælper dig" Problem Cards */}
-    <section className="py-20 md:py-32">
+    {/* Problem Cards */}
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
-          <p className="text-sm tracking-widest uppercase text-primary text-center mb-4">Jeg hjælper dig, der oplever</p>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-14">
+          <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Jeg hjælper dig, der oplever</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">
             Kender du det?
           </h2>
         </FadeInOnScroll>
@@ -124,15 +125,15 @@ const Index = () => (
             <FadeInOnScroll key={i} delay={i * 120}>
               <Link
                 to={card.link}
-                className="group block rounded-xl border border-border bg-card p-8 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="group block p-8 md:p-10 hover:bg-card transition-all duration-500"
               >
-                <div className="w-12 h-12 rounded-full bg-secondary/15 flex items-center justify-center mb-5">
-                  <card.icon size={24} className="text-secondary" />
+                <div className="w-12 h-12 flex items-center justify-center mb-6">
+                  <card.icon size={24} strokeWidth={1.2} className="text-foreground/40 group-hover:text-primary transition-colors" />
                 </div>
-                <h3 className="font-serif text-xl font-semibold mb-3 group-hover:text-primary transition-colors">
+                <h3 className="font-heading text-base tracking-[0.06em] mb-3 group-hover:text-primary transition-colors">
                   {card.title}
                 </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{card.text}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed font-light">{card.text}</p>
               </Link>
             </FadeInOnScroll>
           ))}
@@ -140,34 +141,35 @@ const Index = () => (
       </div>
     </section>
 
-    {/* Forestil dig... — Aspirational */}
-    <section className="py-20 md:py-32 bg-mottled-warm">
+    {/* Parallax divider 1 */}
+    <ParallaxImage src="/images/yoga-ved-Ganges-1024x768.jpg" alt="Yoga ved Ganges — Find Ro" />
+
+    {/* Forestil dig... */}
+    <section className="py-24 md:py-40 bg-mottled-warm">
       <div className="container mx-auto px-4 max-w-3xl text-center">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-8">Forestil dig...</h2>
-          <div className="space-y-5 text-lg leading-relaxed text-foreground/85">
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] mb-10">Forestil dig...</h2>
+          <div className="space-y-5 text-lg leading-relaxed text-foreground/75 font-light">
             <p>At vågne udhvilet — med en krop der føles let og åben.</p>
             <p>At trække vejret dybt, uden den knude i maven.</p>
             <p>At føle dig <em>hjemme</em> i din krop igen.</p>
             <p>At møde hverdagen med ro i stedet for uro.</p>
           </div>
-          <p className="mt-8 text-muted-foreground">
+          <p className="mt-10 text-sm text-muted-foreground font-light">
             Det er ikke en drøm. Det er det, mine klienter oplever efter kropsterapi.
           </p>
         </FadeInOnScroll>
       </div>
     </section>
 
-    {/* Services with images */}
-    <section className="py-20 md:py-32">
+    {/* Services */}
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
-            Behandlinger
-          </h2>
-          <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto">
+          <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Behandlinger</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">
             Skræddersyede behandlinger der møder dig, hvor du er
-          </p>
+          </h2>
         </FadeInOnScroll>
         <div className="max-w-5xl mx-auto">
           <DotCarousel desktopCols={3}>
@@ -200,6 +202,9 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Parallax divider 2 */}
+    <ParallaxImage src="/images/find-ro-4.jpg" alt="Behandling hos Find Ro" />
+
     {/* Pull Quote */}
     <PullQuote
       quote="Jeg har selv stået der — med en krop i alarmberedskab og tanker der aldrig stoppede. Det er den oplevelse, der driver mig."
@@ -208,35 +213,32 @@ const Index = () => (
     />
 
     {/* About Ida */}
-    <section className="py-20 md:py-32">
+    <section className="py-24 md:py-40">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
             <img
               src="/images/profilbillede-1536x2048.jpg"
               alt="Ida Sohn — Kropsterapeut i Aarhus"
-              className="rounded-2xl w-full aspect-[4/5] object-cover shadow-lg"
+              className="w-full aspect-[4/5] object-cover"
               loading="lazy"
             />
           </FadeInOnScroll>
           <FadeInOnScroll delay={150}>
             <div>
-              <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">Mød Ida Sohn</h2>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground mb-4">Om mig</p>
+              <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] mb-6">Mød Ida Sohn</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4 font-light">
                 Min passion for at hjælpe andre til mental og fysisk trivsel er startet ved min egen
                 udviklingsrejse gennem fysiske smerter, stress og angst til langt større indre ro.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-4">
+              <p className="text-muted-foreground leading-relaxed mb-4 font-light">
                 Med mine redskaber, min faglige fundering, forståelse af kroppen og menneskesindet,
                 intuition og mit nærvær oplever jeg virkelig at kunne hjælpe andre på deres rejse.
               </p>
-              <p className="text-muted-foreground leading-relaxed mb-6">
-                Min klinik ligger centralt i Aarhus, i rolige og trygge omgivelser, hvor du kan
-                slippe hverdagens krav og finde ind til dig selv.
-              </p>
               <Link
                 to="/om-ida"
-                className="inline-flex items-center text-primary font-medium hover:underline"
+                className="inline-flex items-center text-xs tracking-[0.1em] uppercase text-foreground/60 hover:text-foreground transition-colors mt-4"
               >
                 Læs mere om min baggrund →
               </Link>
@@ -246,22 +248,23 @@ const Index = () => (
       </div>
     </section>
 
+    {/* Parallax divider 3 */}
+    <ParallaxImage src="/images/cacao_ceremony.jpg" alt="Ida Sohn — cacao ceremony" height="min-h-[40vh]" />
+
     {/* Process Steps */}
     <ProcessSteps />
 
-    {/* Intro Session Conversion */}
+    {/* Intro Session */}
     <IntroSession />
 
     {/* Testimonials */}
-    <section className="py-20 md:py-32">
+    <section className="py-24 md:py-40 bg-card">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
-          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
+          <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Udtalelser</p>
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">
             Det siger mine klienter
           </h2>
-          <p className="text-center text-muted-foreground mb-14 max-w-xl mx-auto">
-            Ægte udtalelser fra mennesker der har fundet ro gennem kropsterapi
-          </p>
         </FadeInOnScroll>
         <div className="max-w-5xl mx-auto">
           <DotCarousel desktopCols={3}>
