@@ -1,6 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import CTABanner from "@/components/CTABanner";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { Check } from "lucide-react";
 
 interface PricingCardProps {
@@ -56,7 +57,7 @@ const Priser = () => (
       <link rel="canonical" href="https://find-ro.dk/priser" />
     </Helmet>
 
-    <section className="py-20 md:py-28 bg-card">
+    <section className="py-20 md:py-28 bg-mottled-warm">
       <div className="container mx-auto px-4 text-center max-w-2xl">
         <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Priser</h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
@@ -68,42 +69,48 @@ const Priser = () => (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <PricingCard
-            title="Enkeltsession"
-            price="750 kr"
-            unit="/ 60 min"
-            features={[
-              "60 minutters behandling",
-              "Individuel tilpasset session",
-              "Inkl. kort opfølgningssamtale",
-              "Ideel til at prøve kropsterapi",
-            ]}
-          />
-          <PricingCard
-            title="Forløb — 5 sessioner"
-            price="3.250 kr"
-            unit="/ 5 × 60 min"
-            highlighted
-            features={[
-              "5 behandlinger (spar 500 kr)",
-              "Personlig behandlingsplan",
-              "Opfølgning mellem sessioner",
-              "Hjemmeøvelser og redskaber",
-              "Anbefalet til stress & angst",
-            ]}
-          />
-          <PricingCard
-            title="Forløb — 10 sessioner"
-            price="5.500 kr"
-            unit="/ 10 × 60 min"
-            features={[
-              "10 behandlinger (spar 2.000 kr)",
-              "Dybdegående behandlingsplan",
-              "Løbende evaluering",
-              "Inkl. kropsøvelser til hjemmebrug",
-              "For dybere transformation",
-            ]}
-          />
+          <FadeInOnScroll delay={0}>
+            <PricingCard
+              title="Enkeltsession"
+              price="750 kr"
+              unit="/ 60 min"
+              features={[
+                "60 minutters behandling",
+                "Individuel tilpasset session",
+                "Inkl. kort opfølgningssamtale",
+                "Ideel til at prøve kropsterapi",
+              ]}
+            />
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={120}>
+            <PricingCard
+              title="Forløb — 5 sessioner"
+              price="3.250 kr"
+              unit="/ 5 × 60 min"
+              highlighted
+              features={[
+                "5 behandlinger (spar 500 kr)",
+                "Personlig behandlingsplan",
+                "Opfølgning mellem sessioner",
+                "Hjemmeøvelser og redskaber",
+                "Anbefalet til stress & angst",
+              ]}
+            />
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={240}>
+            <PricingCard
+              title="Forløb — 10 sessioner"
+              price="5.500 kr"
+              unit="/ 10 × 60 min"
+              features={[
+                "10 behandlinger (spar 2.000 kr)",
+                "Dybdegående behandlingsplan",
+                "Løbende evaluering",
+                "Inkl. kropsøvelser til hjemmebrug",
+                "For dybere transformation",
+              ]}
+            />
+          </FadeInOnScroll>
         </div>
         <div className="text-center mt-10">
           <p className="text-sm text-muted-foreground">
