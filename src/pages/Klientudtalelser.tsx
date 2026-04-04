@@ -2,37 +2,29 @@ import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import TestimonialCard from "@/components/TestimonialCard";
 import CTABanner from "@/components/CTABanner";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
+import DotCarousel from "@/components/DotCarousel";
 
 const testimonials = [
   {
-    quote: "Efter bare tre sessioner hos Ida kunne jeg mærke en kæmpe forskel. Min krop slappede af på en måde, jeg ikke har oplevet i årevis.",
-    name: "Marie K.",
-    detail: "Stressbehandling — 5 sessioners forløb",
+    quote: "Ida er en kompetent og kærlig behandler. Hun forstår sig på medfølende at møde hele mennesket og rumme alle mine sider. Selv de sider af mig selv, som jeg ikke er stolt af, forstår hun at omfavne. Sidst jeg var hos Ida kom jeg med et kaotisk sind og en urolig krop, ked af det og frusteret. Takket være Idas rolige, medfølende behandling gik jeg derfra med en dybere vejrtrækning og en fredfyldt energi. Jeg får mere ud af én behandling hos Ida end 10 samtaler hos en psykolog.",
+    name: "Hester",
+    detail: "Kropsterapi",
   },
   {
-    quote: "Ida har en helt unik evne til at skabe tryghed. Jeg følte mig mødt og forstået fra første minut. Kropsterapien har ændret mit syn på min angst.",
-    name: "Sofie L.",
-    detail: "Angstterapi — løbende forløb",
+    quote: "Idas løbende behandlinger har hjulpet mig på mange måder. Jeg føler jeg er kommet mere ned i kroppen og det har styrket mine relationer. Samtidig er det et godt fokuspunkt for mig i løbet af ugerne at tænke på et rum for mig selv, hvor det er tilladt at give slip og slappe af på en god måde. Jeg giver Ida mine bedste anbefalinger.",
+    name: "Anders",
+    detail: "Løbende forløb",
   },
   {
-    quote: "Jeg var skeptisk, men resultaterne taler for sig selv. Mine kroniske spændinger i nakke og skuldre er næsten væk efter 8 sessioner.",
-    name: "Anne M.",
-    detail: "Kropsterapi — 10 sessioners forløb",
+    quote: "Min hidtidige rejse i følelser, krop og tanker, sammen med Ida, har været helt fantastisk og åbnende. Jeg har genfundet kontakt til min krop, jeg har genfundet tillid, og jeg er begyndt at lytte efter min krops signaler på en ny måde med mindre frygt og frustration. Kære Ida, tusind tak for at være her med det, du er og gør. Jeg har fra første gang været meget tryg, og jeg har følt mig kærligt taget af. Dit nærvær, din intuition og din ærlighed er givende.",
+    name: "Isabella",
+    detail: "Kropsterapi & yoga",
   },
   {
-    quote: "Jeg havde levet med angst i 10 år. Kropsterapien hos Ida var det eneste der virkelig hjalp. Jeg har fået mit liv tilbage.",
-    name: "Line T.",
-    detail: "Angstterapi — 6 måneders forløb",
-  },
-  {
-    quote: "Stress havde taget over, og min krop var i konstant alarmberedskab. Efter 6 sessioner sover jeg igen. Det er uvurderligt.",
-    name: "Katrine B.",
-    detail: "Stressbehandling — intensivt forløb",
-  },
-  {
-    quote: "Ida formår at skabe et rum, hvor man virkelig tør slippe kontrollen. Jeg har aldrig følt mig tryggere i en behandlingssituation.",
-    name: "Camilla R.",
-    detail: "Kropsterapi — forløb over 3 måneder",
+    quote: "Wow for en oplevelse! Tusind tak for at skabe et trygt rum Ida. Jeg fik virkelig løsnet op for nogle gamle ting. Jeg står tilbage med ro, glæde og taknemmelighed. Jeg er fuld af kærlighed. Jeg kommer helt sikker igen og sender gerne alle jeg kender til dig!",
+    name: "Klaus",
+    detail: "Kropsterapi",
   },
 ];
 
@@ -42,28 +34,29 @@ const Klientudtalelser = () => (
       <title>Klientudtalelser — Kropsterapi Anmeldelser Aarhus | Find Ro</title>
       <meta
         name="description"
-        content="Læs hvad klienter siger om kropsterapi hos Find Ro i Aarhus. Ægte udtalelser fra kvinder der har fundet ro efter stress og angst behandling."
+        content="Læs ægte udtalelser fra klienter hos Find Ro i Aarhus. Oplevelser med kropsterapi, stressbehandling og angstterapi."
       />
       <link rel="canonical" href="https://find-ro.dk/klientudtalelser" />
     </Helmet>
 
-    <section className="py-20 md:py-28 bg-card">
+    <section className="py-20 md:py-28 bg-mottled-peach">
       <div className="container mx-auto px-4 text-center max-w-2xl">
         <h1 className="font-serif text-4xl md:text-5xl font-semibold mb-4">Klientudtalelser</h1>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          Ægte historier fra kvinder i Aarhus der har fundet ro gennem kropsterapi. Læs deres
-          oplevelser og se, om det kunne være noget for dig.
+          Ægte historier fra mennesker der har fundet ro gennem kropsterapi hos Ida.
         </p>
       </div>
     </section>
 
     <section className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <DotCarousel desktopCols={2}>
           {testimonials.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
+            <FadeInOnScroll key={i} delay={i * 100}>
+              <TestimonialCard {...t} />
+            </FadeInOnScroll>
           ))}
-        </div>
+        </DotCarousel>
       </div>
     </section>
 

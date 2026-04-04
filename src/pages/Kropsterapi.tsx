@@ -5,6 +5,7 @@ import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
 import ProcessSteps from "@/components/ProcessSteps";
 import TestimonialCard from "@/components/TestimonialCard";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
 import { Check } from "lucide-react";
 
 const benefits = [
@@ -25,12 +26,12 @@ const faqItems = [
   {
     question: "Er kropsterapi det samme som massage?",
     answer:
-      "Nej, kropsterapi adskiller sig fra klassisk massage ved at fokusere på nervesystemet og den emotionelle dimension. Det handler ikke bare om at løsne muskler, men om at hjælpe kroppen med at finde en dybere ro og balance.",
+      "Nej, kropsterapi adskiller sig fra klassisk massage ved at fokusere på nervesystemet og den emotionelle dimension. Oliemassage giver afspænding. Kropsterapi giver forløsning.",
   },
   {
     question: "Hvem kan have gavn af kropsterapi?",
     answer:
-      "Alle kan have gavn af kropsterapi, men det er særligt effektivt for personer med stress, angst, søvnproblemer, kroniske smerter eller emotionelle udfordringer. Mange kvinder i 25-45 års alderen søger kropsterapi i Aarhus.",
+      "Alle kan have gavn af kropsterapi, men det er særligt effektivt for personer med stress, angst, søvnproblemer, kroniske smerter eller emotionelle udfordringer.",
   },
   {
     question: "Hvor lang tid tager det at mærke resultat af kropsterapi?",
@@ -52,41 +53,122 @@ const Kropsterapi = () => (
 
     <Hero
       title="Kropsterapi behandling i Aarhus"
-      subtitle="En helhedsorienteret behandlingsform der arbejder med din krops naturlige evne til at hele og finde balance. Baseret på nærvær, tryghed og dyb kropslig forståelse."
+      subtitle="En helhedsorienteret behandlingsform der arbejder med din krops naturlige evne til at hele og finde balance."
+      backgroundImage="/images/kropsterapibillede.jpg"
     />
 
     {/* What is Kropsterapi */}
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          <div>
-            <h2 className="font-serif text-3xl font-semibold mb-6">Hvad er kropsterapi?</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Kropsterapi er en terapeutisk tilgang der anerkender den dybe forbindelse mellem krop
-              og psyke. Når vi oplever stress, angst eller følelsesmæssige belastninger, sætter det
-              sig i kroppen som spændinger, smerte eller uro.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Gennem kroppen kan vi nå ind til de lag, som samtale alene ikke altid kan nå.
-              Kropsterapi bruger bløde berøringer, åndedrætsøvelser og kropslig opmærksomhed til
-              at hjælpe nervesystemet med at regulere sig selv.
-            </p>
-            <p className="text-muted-foreground leading-relaxed">
-              Hos Find Ro i Aarhus tilbyder jeg en personlig og tryg ramme, hvor du kan lande i
-              kroppen og finde den ro, du har brug for.
-            </p>
-          </div>
-          <div className="bg-card rounded-2xl border border-border p-8">
-            <h3 className="font-serif text-xl font-semibold mb-5">Fordele ved kropsterapi</h3>
-            <ul className="space-y-3">
-              {benefits.map((b, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <Check size={18} className="text-primary mt-0.5 shrink-0" />
-                  <span className="text-sm text-muted-foreground">{b}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+          <FadeInOnScroll>
+            <div>
+              <h2 className="font-serif text-3xl font-semibold mb-6">Hvad er kropsterapi?</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Kropsterapi er en terapeutisk tilgang der anerkender den dybe forbindelse mellem krop
+                og psyke. Når vi oplever stress, angst eller følelsesmæssige belastninger, sætter det
+                sig i kroppen som spændinger, smerte eller uro.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Gennem kroppen kan vi nå ind til de lag, som samtale alene ikke altid kan nå.
+                Kropsterapi bruger åndedrætsarbejde, tryk, pulseringer, zonepunkter, samtale og
+                grounding til at hjælpe nervesystemet med at regulere sig selv.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Hos Find Ro i Aarhus tilbyder jeg en personlig og tryg ramme, hvor du kan lande i
+                kroppen og finde den ro, du har brug for.
+              </p>
+            </div>
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={150}>
+            <div className="bg-card rounded-2xl border border-border p-8">
+              <h3 className="font-serif text-xl font-semibold mb-5">Fordele ved kropsterapi</h3>
+              <ul className="space-y-3">
+                {benefits.map((b, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <Check size={18} className="text-primary mt-0.5 shrink-0" />
+                    <span className="text-sm text-muted-foreground">{b}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeInOnScroll>
+        </div>
+      </div>
+    </section>
+
+    {/* Massage vs Kropsterapi comparison */}
+    <section className="py-16 md:py-24 bg-mottled-warm">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <FadeInOnScroll>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
+            Oliemassage giver afspænding.<br />Kropsterapi giver forløsning.
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+            Begge behandlinger er nærende og hjælper kroppen til ro – men de har forskellige formål og dybde.
+          </p>
+        </FadeInOnScroll>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <FadeInOnScroll delay={0}>
+            <div className="rounded-2xl bg-card border border-border p-8 h-full">
+              <h3 className="font-serif text-xl font-semibold mb-4">Oliemassage</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                <strong className="text-foreground">Fokus:</strong> Afspænding, velvære og fysisk lettelse
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Har brug for at slappe af</li>
+                <li>• Trænger til løsnet muskler og bindevæv</li>
+                <li>• Vil have en behagelig og sanselig oplevelse</li>
+                <li>• Har spændinger i nakke, skuldre, ryg eller lænd</li>
+                <li>• Gerne vil prøve cupping</li>
+              </ul>
+              <p className="text-xs text-muted-foreground mt-4 italic">
+                En nærende og afslappende kropsbehandling – fokus på muskler, væv og ro.
+              </p>
+            </div>
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={150}>
+            <div className="rounded-2xl bg-primary/5 border border-primary/20 p-8 h-full">
+              <h3 className="font-serif text-xl font-semibold mb-4">Kropsterapi</h3>
+              <p className="text-sm text-muted-foreground mb-4">
+                <strong className="text-foreground">Fokus:</strong> Sammenhæng mellem krop, følelser, nervesystem og gamle mønstre
+              </p>
+              <ul className="space-y-2 text-sm text-muted-foreground">
+                <li>• Har stress, uro, angst der føles "dybere"</li>
+                <li>• Er nysgerrig på sammenhængen mellem krop og psyke</li>
+                <li>• Vil arbejde med indre mønstre og følelser</li>
+                <li>• Ønsker personlig udvikling og mere kontakt til kroppen</li>
+                <li>• Længes efter dyb forløsning og balance i nervesystemet</li>
+              </ul>
+              <p className="text-xs text-muted-foreground mt-4 italic">
+                En terapeutisk behandling, hvor krop, åndedræt og følelser inddrages – fokus på indre processer og dyb forandring.
+              </p>
+            </div>
+          </FadeInOnScroll>
+        </div>
+      </div>
+    </section>
+
+    {/* Treatment photo */}
+    <section className="py-16 md:py-24">
+      <div className="container mx-auto px-4 max-w-4xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+          <FadeInOnScroll>
+            <img
+              src="/images/find-ro-4.jpg"
+              alt="Kropsterapi behandling hos Find Ro i Aarhus"
+              className="rounded-2xl w-full aspect-[4/3] object-cover shadow-md"
+              loading="lazy"
+            />
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={150}>
+            <img
+              src="/images/massage-1024x632.jpg"
+              alt="Afspændende behandling i trygge omgivelser"
+              className="rounded-2xl w-full aspect-[4/3] object-cover shadow-md"
+              loading="lazy"
+            />
+          </FadeInOnScroll>
         </div>
       </div>
     </section>
@@ -96,14 +178,16 @@ const Kropsterapi = () => (
     {/* Testimonial highlight */}
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4 max-w-3xl">
-        <h2 className="font-serif text-3xl font-semibold text-center mb-10">
-          Hvad klienter siger om kropsterapi hos Find Ro
-        </h2>
-        <TestimonialCard
-          quote="Kropsterapien hos Ida har ændret mit liv. Jeg havde kroniske smerter i 5 år, og efter et forløb på 8 sessioner er de næsten helt væk. Det er som at have fået en ny krop."
-          name="Camilla R."
-          detail="Aarhus — forløb over 3 måneder"
-        />
+        <FadeInOnScroll>
+          <h2 className="font-serif text-3xl font-semibold text-center mb-10">
+            Hvad klienter siger om kropsterapi hos Find Ro
+          </h2>
+          <TestimonialCard
+            quote="Wow for en oplevelse! Tusind tak for at skabe et trygt rum Ida. Jeg fik virkelig løsnet op for nogle gamle ting. Jeg står tilbage med ro, glæde og taknemmelighed. Jeg er fuld af kærlighed. Jeg kommer helt sikker igen og sender gerne alle jeg kender til dig!"
+            name="Klaus"
+            detail="Kropsterapi"
+          />
+        </FadeInOnScroll>
       </div>
     </section>
 

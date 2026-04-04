@@ -8,6 +8,8 @@ interface HeroProps {
   showSecondary?: boolean;
   secondaryText?: string;
   secondaryLink?: string;
+  backgroundImage?: string;
+  mottled?: boolean;
 }
 
 const Hero = ({
@@ -18,14 +20,28 @@ const Hero = ({
   showSecondary = false,
   secondaryText = "Læs mere",
   secondaryLink = "/kropsterapi",
+  backgroundImage,
+  mottled = false,
 }: HeroProps) => (
-  <section className="relative overflow-hidden bg-card py-20 md:py-32">
-    {/* Decorative shapes */}
-    <div className="absolute top-0 right-0 w-72 h-72 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/3" />
-    <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 rounded-full translate-y-1/2 -translate-x-1/3" />
+  <section
+    className={`relative overflow-hidden py-24 md:py-36 ${
+      backgroundImage ? "" : mottled ? "bg-mottled-peach" : "bg-card"
+    }`}
+  >
+    {backgroundImage && (
+      <>
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        />
+        {/* Warm mottled overlay */}
+        <div className="absolute inset-0 bg-mottled-peach opacity-85" />
+        <div className="absolute inset-0 bg-gradient-to-b from-background/30 via-transparent to-background/50" />
+      </>
+    )}
 
     <div className="container mx-auto px-4 relative z-10 text-center max-w-3xl">
-      <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6 animate-fade-in-up">
+      <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-semibold text-foreground leading-tight mb-6">
         {title}
       </h1>
       <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-10 max-w-2xl mx-auto">

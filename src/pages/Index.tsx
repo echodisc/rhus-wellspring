@@ -6,26 +6,29 @@ import TestimonialCard from "@/components/TestimonialCard";
 import ProcessSteps from "@/components/ProcessSteps";
 import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
+import FadeInOnScroll from "@/components/FadeInOnScroll";
+import DotCarousel from "@/components/DotCarousel";
 import { Heart, Brain, Flower2 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
     quote:
-      "Efter bare tre sessioner hos Ida kunne jeg mærke en kæmpe forskel. Min krop slappede af på en måde, jeg ikke har oplevet i årevis. Jeg sover bedre og føler mig mere til stede.",
-    name: "Marie K.",
-    detail: "Aarhus — stressbehandling",
+      "Ida er en kompetent og kærlig behandler. Hun forstår sig på medfølende at møde hele mennesket. Jeg får mere ud af én behandling hos Ida end 10 samtaler hos en psykolog.",
+    name: "Hester",
+    detail: "Kropsterapi",
   },
   {
     quote:
-      "Ida har en helt unik evne til at skabe tryghed. Jeg følte mig mødt og forstået fra første minut. Kropsterapien har hjulpet mig med at håndtere min angst.",
-    name: "Sofie L.",
-    detail: "Aarhus — angstterapi",
+      "Idas løbende behandlinger har hjulpet mig på mange måder. Jeg føler jeg er kommet mere ned i kroppen og det har styrket mine relationer. Jeg giver Ida mine bedste anbefalinger.",
+    name: "Anders",
+    detail: "Løbende forløb",
   },
   {
     quote:
-      "Jeg var skeptisk i starten, men resultaterne taler for sig selv. Mine kroniske spændinger i nakke og skuldre er næsten væk. Kan varmt anbefales!",
-    name: "Anne M.",
-    detail: "Aarhus — kropsterapi",
+      "Min hidtidige rejse i følelser, krop og tanker, sammen med Ida, har været helt fantastisk og åbnende. Jeg har genfundet kontakt til min krop og tillid. Idas nærvær og intuition er givende.",
+    name: "Isabella",
+    detail: "Kropsterapi & yoga",
   },
 ];
 
@@ -73,90 +76,128 @@ const Index = () => (
       <link rel="canonical" href="https://find-ro.dk/" />
     </Helmet>
 
-    {/* Hero */}
+    {/* Hero with background image */}
     <Hero
       title="Kropsterapi i Aarhus — Slip fri af stress og angst"
       subtitle="Oplev en dybere forbindelse til din krop og find ro i en travl hverdag. Professionel og personlig kropsterapi i hjertet af Aarhus."
       showSecondary
       secondaryText="Læs mere om kropsterapi"
       secondaryLink="/kropsterapi"
+      backgroundImage="/images/Find-Ro-2.jpg"
     />
 
     {/* Problem/Empathy */}
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4 max-w-3xl text-center">
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">Kender du det?</h2>
-        <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
-          <p>Du vågner om morgenen med spændinger i kroppen, selvom du har sovet hele natten.</p>
-          <p>Tankerne kører i ring, og du kan ikke finde ro — hverken i kroppen eller hovedet.</p>
-          <p>Du har prøvet at "tage dig sammen", men stressen sidder fast i kroppen.</p>
-        </div>
-        <p className="mt-8 text-foreground font-medium text-lg">
-          Du er ikke alene. Og der <em>er</em> en vej til forandring.
-        </p>
+        <FadeInOnScroll>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">Kender du det?</h2>
+          <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
+            <p>Du vågner om morgenen med spændinger i kroppen, selvom du har sovet hele natten.</p>
+            <p>Tankerne kører i ring, og du kan ikke finde ro — hverken i kroppen eller hovedet.</p>
+            <p>Du har prøvet at "tage dig sammen", men stressen sidder fast i kroppen.</p>
+          </div>
+          <p className="mt-8 text-foreground font-medium text-lg">
+            Du er ikke alene. Og der <em>er</em> en vej til forandring.
+          </p>
+        </FadeInOnScroll>
+      </div>
+    </section>
+
+    {/* Forestil dig... — Aspirational value section */}
+    <section className="py-16 md:py-24 bg-mottled-warm">
+      <div className="container mx-auto px-4 max-w-3xl text-center">
+        <FadeInOnScroll>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-8">Forestil dig...</h2>
+          <div className="space-y-5 text-lg leading-relaxed text-foreground/85">
+            <p>At vågne udhvilet — med en krop der føles let og åben.</p>
+            <p>At trække vejret dybt, uden den knude i maven.</p>
+            <p>At føle dig <em>hjemme</em> i din krop igen.</p>
+            <p>At møde hverdagen med ro i stedet for uro.</p>
+          </div>
+          <p className="mt-8 text-muted-foreground">
+            Det er ikke en drøm. Det er det, mine klienter oplever efter kropsterapi.
+          </p>
+        </FadeInOnScroll>
       </div>
     </section>
 
     {/* Services */}
-    <section className="py-16 md:py-24 bg-card">
+    <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
-          Behandlinger
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-          Skræddersyede behandlinger der møder dig, hvor du er
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          <ServiceCard
-            icon={Heart}
-            title="Kropsterapi"
-            description="Helhedsorienteret behandling der løsner op for kropslige spændinger og skaber balance i nervesystemet."
-            link="/kropsterapi"
-          />
-          <ServiceCard
-            icon={Brain}
-            title="Stress & Angst"
-            description="Specialiseret behandling for dig der oplever stress, angst eller uro i hverdagen. Baseret på kropslig tilgang."
-            link="/stress-og-angst"
-          />
-          <ServiceCard
-            icon={Flower2}
-            title="Yoga & Åndedræt"
-            description="Bløde yoga- og åndedrætsøvelser der supplerer kropsterapien og giver dig redskaber til hverdagen."
-            link="/kontakt"
-          />
+        <FadeInOnScroll>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
+            Behandlinger
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
+            Skræddersyede behandlinger der møder dig, hvor du er
+          </p>
+        </FadeInOnScroll>
+        <div className="max-w-5xl mx-auto">
+          <DotCarousel desktopCols={3}>
+            <FadeInOnScroll delay={0}>
+              <ServiceCard
+                icon={Heart}
+                title="Kropsterapi"
+                description="Helhedsorienteret behandling der løsner op for kropslige spændinger og skaber balance i nervesystemet."
+                link="/kropsterapi"
+              />
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={120}>
+              <ServiceCard
+                icon={Brain}
+                title="Stress & Angst"
+                description="Specialiseret behandling for dig der oplever stress, angst eller uro i hverdagen. Baseret på kropslig tilgang."
+                link="/stress-og-angst"
+              />
+            </FadeInOnScroll>
+            <FadeInOnScroll delay={240}>
+              <ServiceCard
+                icon={Flower2}
+                title="Yoga & Åndedræt"
+                description="Bløde yoga- og åndedrætsøvelser der supplerer kropsterapien og giver dig redskaber til hverdagen."
+                link="/kontakt"
+              />
+            </FadeInOnScroll>
+          </DotCarousel>
         </div>
       </div>
     </section>
 
-    {/* About Ida */}
-    <section className="py-16 md:py-24">
+    {/* About Ida with real photo */}
+    <section className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-          <div className="aspect-[4/5] rounded-2xl bg-muted flex items-center justify-center">
-            <span className="text-muted-foreground text-sm">Foto af Ida</span>
-          </div>
-          <div>
-            <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">Mød Ida Sohn</h2>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Jeg er uddannet kropsterapeut med speciale i stress og angst. I over 8 år har jeg
-              hjulpet kvinder i Aarhus med at finde vej tilbage til en krop i balance.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-4">
-              Min tilgang er baseret på nærvær, tryghed og en dyb respekt for din krops visdom.
-              Jeg tror på, at kroppen har svarene — vi skal bare lære at lytte.
-            </p>
-            <p className="text-muted-foreground leading-relaxed mb-6">
-              Min klinik ligger centralt i Aarhus, i rolige og trygge omgivelser, hvor du kan
-              slippe hverdagens krav og finde ind til dig selv.
-            </p>
-            <a
-              href="/om-ida"
-              className="inline-flex items-center text-primary font-medium hover:underline"
-            >
-              Læs mere om min baggrund →
-            </a>
-          </div>
+          <FadeInOnScroll>
+            <img
+              src="/images/profilbillede-1536x2048.jpg"
+              alt="Ida Sohn — Kropsterapeut i Aarhus"
+              className="rounded-2xl w-full aspect-[4/5] object-cover shadow-lg"
+              loading="lazy"
+            />
+          </FadeInOnScroll>
+          <FadeInOnScroll delay={150}>
+            <div>
+              <h2 className="font-serif text-3xl md:text-4xl font-semibold mb-6">Mød Ida Sohn</h2>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Min passion for at hjælpe andre til mental og fysisk trivsel er startet ved min egen
+                udviklingsrejse gennem fysiske smerter, stress og angst til langt større indre ro.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-4">
+                Med mine redskaber, min faglige fundering, forståelse af kroppen og menneskesindet,
+                intuition og mit nærvær oplever jeg virkelig at kunne hjælpe andre på deres rejse.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-6">
+                Min klinik ligger centralt i Aarhus, i rolige og trygge omgivelser, hvor du kan
+                slippe hverdagens krav og finde ind til dig selv.
+              </p>
+              <Link
+                to="/om-ida"
+                className="inline-flex items-center text-primary font-medium hover:underline"
+              >
+                Læs mere om min baggrund →
+              </Link>
+            </div>
+          </FadeInOnScroll>
         </div>
       </div>
     </section>
@@ -167,16 +208,22 @@ const Index = () => (
     {/* Testimonials */}
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
-          Det siger mine klienter
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
-          Læs hvad kvinder i Aarhus oplever efter kropsterapi hos Find Ro
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
-          ))}
+        <FadeInOnScroll>
+          <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-4">
+            Det siger mine klienter
+          </h2>
+          <p className="text-center text-muted-foreground mb-12 max-w-xl mx-auto">
+            Ægte udtalelser fra mennesker der har fundet ro gennem kropsterapi
+          </p>
+        </FadeInOnScroll>
+        <div className="max-w-5xl mx-auto">
+          <DotCarousel desktopCols={3}>
+            {testimonials.map((t, i) => (
+              <FadeInOnScroll key={i} delay={i * 120}>
+                <TestimonialCard {...t} />
+              </FadeInOnScroll>
+            ))}
+          </DotCarousel>
         </div>
       </div>
     </section>

@@ -17,9 +17,13 @@ const Navbar = () => {
 
   return (
     <nav className="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4">
-        <Link to="/" className="font-serif text-2xl font-semibold text-primary tracking-wide">
-          Find Ro
+      <div className="container mx-auto flex items-center justify-between py-3 px-4">
+        <Link to="/" className="flex items-center">
+          <img
+            src="/images/Logoside-edited.png"
+            alt="Find Ro — Kropsterapi i Aarhus"
+            className="h-10 md:h-12 w-auto"
+          />
         </Link>
 
         {/* Desktop */}
@@ -90,7 +94,11 @@ const Footer = () => (
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
         <div>
-          <h3 className="font-serif text-xl font-semibold text-primary mb-3">Find Ro</h3>
+          <img
+            src="/images/Logoside-edited.png"
+            alt="Find Ro"
+            className="h-10 w-auto mb-4"
+          />
           <p className="text-sm text-muted-foreground leading-relaxed">
             Kropsterapi i Aarhus med fokus på stress, angst og kropslige spændinger. En tryg og
             personlig tilgang til din krop og dit sind.
