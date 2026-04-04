@@ -112,7 +112,7 @@ const Index = () => (
     />
 
     {/* Problem Cards */}
-    <section className="py-24 md:py-40">
+    <section className="py-24 md:py-40 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Jeg hjælper dig, der oplever</p>
