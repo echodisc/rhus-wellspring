@@ -4,43 +4,45 @@
 
 @layer base {
   :root {
-    --background: 30 25% 95%;
+    --background: 34 22% 93%;
     --foreground: 20 12% 18%;
 
-    --card: 30 20% 91%;
+    --card: 33 18% 89%;
     --card-foreground: 20 12% 18%;
 
-    --popover: 30 25% 95%;
+    --popover: 34 22% 93%;
     --popover-foreground: 20 12% 18%;
 
     --primary: 155 15% 40%;
-    --primary-foreground: 30 25% 96%;
+    --primary-foreground: 34 22% 96%;
 
     --secondary: 12 35% 68%;
-    --secondary-foreground: 30 25% 96%;
+    --secondary-foreground: 34 22% 96%;
 
-    --muted: 30 15% 88%;
+    --muted: 32 14% 86%;
     --muted-foreground: 20 8% 42%;
 
     --accent: 22 45% 55%;
     --accent-foreground: 20 12% 12%;
 
+    --gold: 38 35% 60%;
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 28 12% 82%;
-    --input: 28 12% 82%;
+    --border: 30 10% 85%;
+    --input: 30 10% 85%;
     --ring: 155 15% 40%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    --sidebar-background: 30 20% 91%;
+    --sidebar-background: 33 18% 89%;
     --sidebar-foreground: 20 12% 18%;
     --sidebar-primary: 155 15% 40%;
-    --sidebar-primary-foreground: 30 25% 96%;
-    --sidebar-accent: 30 15% 88%;
+    --sidebar-primary-foreground: 34 22% 96%;
+    --sidebar-accent: 32 14% 86%;
     --sidebar-accent-foreground: 20 12% 18%;
-    --sidebar-border: 28 12% 82%;
+    --sidebar-border: 30 10% 85%;
     --sidebar-ring: 155 15% 40%;
   }
 
@@ -65,6 +67,8 @@
 
     --accent: 22 40% 48%;
     --accent-foreground: 30 20% 90%;
+
+    --gold: 38 30% 50%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -92,37 +96,37 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', sans-serif;
+    font-weight: 300;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.04em;
   }
 }
 
 @layer utilities {
   .bg-mottled-warm {
     background:
-      radial-gradient(ellipse 80% 60% at 20% 30%, hsl(16 50% 80% / 0.35), transparent),
-      radial-gradient(ellipse 60% 80% at 80% 70%, hsl(28 55% 78% / 0.3), transparent),
-      radial-gradient(ellipse 50% 50% at 50% 50%, hsl(35 40% 85% / 0.25), transparent),
-      radial-gradient(ellipse 70% 40% at 70% 20%, hsl(12 40% 82% / 0.2), transparent),
+      radial-gradient(ellipse 80% 60% at 20% 30%, hsl(16 50% 80% / 0.25), transparent),
+      radial-gradient(ellipse 60% 80% at 80% 70%, hsl(28 55% 78% / 0.2), transparent),
+      radial-gradient(ellipse 50% 50% at 50% 50%, hsl(35 40% 85% / 0.15), transparent),
       hsl(var(--background));
   }
 
   .bg-mottled-peach {
     background:
-      radial-gradient(ellipse 90% 70% at 15% 40%, hsl(16 55% 78% / 0.4), transparent),
-      radial-gradient(ellipse 70% 90% at 85% 60%, hsl(25 50% 75% / 0.35), transparent),
-      radial-gradient(ellipse 60% 60% at 45% 80%, hsl(35 45% 82% / 0.3), transparent),
-      radial-gradient(ellipse 80% 50% at 60% 15%, hsl(10 42% 80% / 0.25), transparent),
-      hsl(30 22% 92%);
+      radial-gradient(ellipse 90% 70% at 15% 40%, hsl(16 55% 78% / 0.3), transparent),
+      radial-gradient(ellipse 70% 90% at 85% 60%, hsl(25 50% 75% / 0.25), transparent),
+      radial-gradient(ellipse 60% 60% at 45% 80%, hsl(35 45% 82% / 0.2), transparent),
+      hsl(34 22% 92%);
   }
 
   .bg-mottled-sage {
     background:
-      radial-gradient(ellipse 80% 60% at 25% 35%, hsl(155 18% 75% / 0.3), transparent),
-      radial-gradient(ellipse 60% 80% at 75% 65%, hsl(30 30% 82% / 0.25), transparent),
-      radial-gradient(ellipse 50% 50% at 50% 50%, hsl(35 25% 88% / 0.2), transparent),
+      radial-gradient(ellipse 80% 60% at 25% 35%, hsl(155 18% 75% / 0.2), transparent),
+      radial-gradient(ellipse 60% 80% at 75% 65%, hsl(30 30% 82% / 0.15), transparent),
       hsl(var(--background));
   }
 }
