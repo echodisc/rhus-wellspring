@@ -49,7 +49,7 @@ const faqItems = [
   {
     question: "Hvad koster en behandling hos Find Ro i Aarhus?",
     answer:
-      "En enkeltsession koster 750 kr. Vi tilbyder også forløbspakker med rabat. Se alle priser på vores prisside, eller ring for en uforpligtende snak.",
+      "En indledende samtale koster 300 kr. og varer 15-20 min. En fuld behandlingssession koster 750 kr. Jeg tilbyder også forløbspakker med rabat — se alle priser på prissiden.",
   },
   {
     question: "Kan kropsterapi hjælpe mod angst og stress?",
