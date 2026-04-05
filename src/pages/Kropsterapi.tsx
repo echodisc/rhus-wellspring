@@ -171,7 +171,7 @@ const Kropsterapi = () => {
     <ParallaxImage src="/images/yoga-for-alle.jpg" alt="Yoga for alle" height="min-h-[40vh]" />
 
     <ProcessSteps />
-    <IntroSession />
+    <IntroSession onBookClick={() => setBookingOpen(true)} />
 
     {/* Testimonial */}
     <section className="relative z-[1] py-14 md:py-24 bg-card">
