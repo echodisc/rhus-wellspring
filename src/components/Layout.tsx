@@ -19,7 +19,7 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between py-4 px-4">
         <Link to="/" className="flex items-center">
           <img
-            src="/images/Logoside-edited.png"
+            src="/images/find-ro-logo-transparent.png"
             alt="Find Ro — Kropsterapi i Aarhus"
             className="h-8 md:h-10 w-auto"
           />
