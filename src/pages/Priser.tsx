@@ -58,7 +58,7 @@ const Priser = () => (
       <link rel="canonical" href="https://find-ro.dk/priser" />
     </Helmet>
 
-    <section className="py-28 md:py-40 bg-mottled-warm">
+    <section className="relative z-[1] py-20 md:py-32 bg-mottled-warm">
       <div className="container mx-auto px-4 text-center max-w-2xl">
         <h1 className="font-heading text-3xl md:text-4xl font-light tracking-[0.04em] mb-4">Priser</h1>
         <p className="text-muted-foreground leading-relaxed font-light">
@@ -67,7 +67,7 @@ const Priser = () => (
       </div>
     </section>
 
-    <section className="py-24 md:py-40">
+    <section className="relative z-[1] py-14 md:py-24 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border/40 max-w-5xl mx-auto">
           <FadeInOnScroll delay={0}>

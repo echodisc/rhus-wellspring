@@ -37,7 +37,7 @@ const OmIda = () => (
     </Helmet>
 
     {/* Hero */}
-    <section className="py-28 md:py-44 bg-mottled-peach">
+    <section className="relative z-[1] py-20 md:py-32 bg-mottled-peach">
       <div className="container mx-auto px-4 max-w-5xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
@@ -74,7 +74,7 @@ const OmIda = () => (
     />
 
     {/* Story */}
-    <section className="py-24 md:py-40">
+    <section className="relative z-[1] py-14 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
@@ -117,7 +117,7 @@ const OmIda = () => (
     <TimelineSection />
 
     {/* Credentials */}
-    <section className="py-24 md:py-40 bg-card">
+    <section className="relative z-[1] py-14 md:py-24 bg-card">
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Baggrund</p>
