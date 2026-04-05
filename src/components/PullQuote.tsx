@@ -13,7 +13,7 @@ const bgMap = {
 };
 
 const PullQuote = ({ quote, author, background = "warm" }: PullQuoteProps) => (
-  <section className={`py-24 md:py-40 ${bgMap[background]}`}>
+  <section className={`relative z-[1] py-16 md:py-28 ${bgMap[background]}`}>
     <div className="container mx-auto px-4 max-w-3xl text-center">
       <FadeInOnScroll>
         <div className="w-12 h-px bg-gold mx-auto mb-8" />

@@ -12,7 +12,7 @@ const ParallaxImage = ({
   overlay = true,
 }: ParallaxImageProps) => (
   <section
-    className={`${height} relative bg-fixed bg-cover bg-center`}
+    className={`${height} relative z-[1] bg-fixed bg-cover bg-center`}
     style={{ backgroundImage: `url(${src})` }}
     role="img"
     aria-label={alt}
