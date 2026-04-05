@@ -142,7 +142,7 @@ const Index = () => (
     </section>
 
     {/* Forestil dig... */}
-    <section className="relative z-[1] py-24 md:py-40 bg-mottled-warm">
+    <section className="relative z-[1] py-16 md:py-28 bg-mottled-warm">
       <div className="container mx-auto px-4 max-w-3xl text-center">
         <FadeInOnScroll>
           <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] mb-10">Forestil dig...</h2>
