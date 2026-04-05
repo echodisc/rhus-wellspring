@@ -12,22 +12,19 @@ const ParallaxImage = ({
   overlay = true,
 }: ParallaxImageProps) => (
   <section
-    className={`${height} relative z-[1] bg-fixed bg-cover bg-center`}
-    style={{ backgroundImage: `url(${src})` }}
+    className={`${height} relative z-[1] overflow-hidden`}
     role="img"
     aria-label={alt}
   >
+    <img
+      src={src}
+      alt={alt}
+      className="absolute inset-0 w-full h-full object-cover"
+      loading="lazy"
+    />
     {overlay && (
-      <div className="absolute inset-0 bg-foreground/10" />
+      <div className="absolute inset-0 bg-foreground/10" style={{ forcedColorAdjust: "none" } as React.CSSProperties} />
     )}
-    {/* Mobile fallback — iOS doesn't support background-attachment: fixed */}
-    <style>{`
-      @supports (-webkit-touch-callout: none) {
-        [style*="background-image: url(${src})"] {
-          background-attachment: scroll !important;
-        }
-      }
-    `}</style>
   </section>
 );
 

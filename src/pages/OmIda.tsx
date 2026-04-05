@@ -121,7 +121,7 @@ const OmIda = () => (
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Baggrund</p>
-          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-10">
             Baggrund & kompetencer
           </h2>
         </FadeInOnScroll>

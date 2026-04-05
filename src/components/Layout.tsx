@@ -101,7 +101,7 @@ const Footer = () => (
       <div className="max-w-4xl mx-auto">
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 mb-12">
           <img
-            src="/images/Logoside-edited.png"
+            src="/images/find-ro-logo-transparent.png"
             alt="Find Ro"
             className="h-8 w-auto"
           />

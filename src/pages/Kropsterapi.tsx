@@ -118,7 +118,7 @@ const Kropsterapi = () => (
           <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-4">
             Oliemassage giver afspænding.<br />Kropsterapi giver forløsning.
           </h2>
-          <p className="text-center text-muted-foreground mb-14 max-w-2xl mx-auto font-light">
+          <p className="text-center text-muted-foreground mb-10 max-w-2xl mx-auto font-light">
             Begge behandlinger er nærende og hjælper kroppen til ro – men de har forskellige formål og dybde.
           </p>
         </FadeInOnScroll>
