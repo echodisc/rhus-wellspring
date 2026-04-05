@@ -33,7 +33,7 @@ const items: TimelineItem[] = [
 ];
 
 const TimelineSection = () => (
-  <section className="py-16 md:py-24 bg-mottled-sage">
+  <section className="relative z-[1] py-14 md:py-24 bg-mottled-sage">
     <div className="container mx-auto px-4 max-w-3xl">
       <FadeInOnScroll>
         <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-14">
