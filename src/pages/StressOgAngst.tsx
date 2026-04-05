@@ -14,7 +14,7 @@ const approaches = [
   {
     icon: HeartPulse,
     title: "Nervesystemregulering",
-    text: "Vi arbejder direkte med dit autonome nervesystem for at bringe dig ud af fight-or-flight tilstand.",
+    text: "Jeg arbejder direkte med dit autonome nervesystem for at bringe dig ud af fight-or-flight tilstand.",
   },
   {
     icon: Wind,
@@ -88,7 +88,7 @@ const StressOgAngst = () => (
                 ørerne. Stress og angst er ikke bare "noget i hovedet" — det er en kropslig tilstand.
               </p>
               <p className="text-muted-foreground leading-relaxed font-light">
-                Hos Find Ro i Aarhus arbejder vi med det autonome nervesystem for at hjælpe din krop
+                Hos Find Ro i Aarhus arbejder jeg med det autonome nervesystem for at hjælpe din krop
                 ud af alarmberedskab og ind i en tilstand af ro og genopretning.
               </p>
             </div>
@@ -110,7 +110,7 @@ const StressOgAngst = () => (
 
     {/* Pull Quote */}
     <PullQuote
-      quote="Du fortjener at leve uden konstant uro. Det starter med at lytte til kroppen."
+      quote="Når nervesystemet finder ro, følger resten med. Du fortjener den ro."
       author="Ida Sohn"
       background="warm"
     />

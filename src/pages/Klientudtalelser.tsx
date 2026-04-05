@@ -61,7 +61,7 @@ const Klientudtalelser = () => (
     </section>
 
     <CTABanner
-      headline="Bliv den næste succeshistorie"
+      headline="Klar til at mærke forskellen?"
       subtext="Book din første session og oplev selv, hvordan kropsterapi kan gøre en forskel."
     />
   </Layout>

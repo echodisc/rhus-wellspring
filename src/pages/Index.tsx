@@ -44,17 +44,17 @@ const faqItems = [
   {
     question: "Hvor mange behandlinger har jeg brug for?",
     answer:
-      "Det er individuelt. Mange oplever forbedring efter 3-5 behandlinger, men for dybere problematikker kan et længere forløb være gavnligt. Vi laver altid en plan sammen efter første session.",
+      "Det er individuelt. Mange oplever forbedring efter 5-8 behandlinger, men for dybere problematikker kan et længere forløb være gavnligt. Vi laver altid en plan sammen efter første session.",
   },
   {
     question: "Hvad koster en behandling hos Find Ro i Aarhus?",
     answer:
-      "En enkeltsession koster 750 kr. Vi tilbyder også forløbspakker med rabat. Se alle priser på vores prisside, eller ring for en uforpligtende snak.",
+      "En indledende samtale koster 300 kr. og varer 15-20 min. En fuld behandlingssession koster 750 kr. Jeg tilbyder også forløbspakker med rabat — se alle priser på prissiden.",
   },
   {
     question: "Kan kropsterapi hjælpe mod angst og stress?",
     answer:
-      "Ja, kropsterapi er en af de mest effektive tilgange til stress og angst, fordi vi arbejder direkte med nervesystemet. Mange klienter oplever markant reduktion i angstsymptomer og en dybere følelse af ro.",
+      "Ja, kropsterapi er en af de mest effektive tilgange til stress og angst, fordi jeg arbejder direkte med nervesystemet. Mange klienter oplever markant reduktion i angstsymptomer og en dybere følelse af ro.",
   },
   {
     question: "Hvor foregår behandlingerne i Aarhus?",
@@ -115,9 +115,8 @@ const Index = () => (
     <section className="relative z-[1] py-14 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
-          <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Jeg hjælper dig, der oplever</p>
           <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-10">
-            Kender du det?
+            Sidder du fast i kroppen?
           </h2>
         </FadeInOnScroll>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -204,7 +203,7 @@ const Index = () => (
 
     {/* Pull Quote */}
     <PullQuote
-      quote="Jeg har selv stået der — med en krop i alarmberedskab og tanker der aldrig stoppede. Det er den oplevelse, der driver mig."
+      quote="Jeg kender det selv. Det er derfra min tilgang kommer."
       author="Ida Sohn"
       background="sage"
     />

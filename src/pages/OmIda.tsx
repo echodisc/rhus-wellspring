@@ -68,7 +68,7 @@ const OmIda = () => (
 
     {/* Pull Quote */}
     <PullQuote
-      quote="Jeg har dedikeret mit liv til at hjælpe andre med at finde den samme ro og forbindelse til kroppen, som jeg selv fandt."
+      quote="Balancen er ikke et mål - det er en bevægelse, man vender tilbage til."
       author="Ida Sohn"
       background="sage"
     />

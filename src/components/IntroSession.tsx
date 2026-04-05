@@ -10,8 +10,8 @@ interface IntroSessionProps {
 
 const IntroSession = ({
   headline = "Indledende samtale",
-  description = "Vi starter altid med en uforpligtende samtale, hvor vi taler om dine behov og hvordan kropsterapi kan hjælpe dig. Du får en fornemmelse af min tilgang, og vi lægger en plan sammen — helt i dit tempo.",
-  price = "Gratis",
+  description = "En kort, uforpligtende samtale om dine behov og hvordan kropsterapi kan hjælpe dig. Kan foregå via telefon, video eller i klinikken.",
+  price = "300 kr.",
   image = "/images/find-ro-4.jpg",
 }: IntroSessionProps) => (
   <section className="relative z-[1] py-16 md:py-24 bg-card">

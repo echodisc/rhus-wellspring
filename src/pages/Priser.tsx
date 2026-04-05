@@ -62,7 +62,7 @@ const Priser = () => (
       <div className="container mx-auto px-4 text-center max-w-2xl">
         <h1 className="font-heading text-3xl md:text-4xl font-light tracking-[0.04em] mb-4">Priser</h1>
         <p className="text-muted-foreground leading-relaxed font-light">
-          Transparent prissætning. Ingen skjulte gebyrer. Investér i din krop og dit velvære.
+          Enkel prissætning. Ingen overraskelser.
         </p>
       </div>
     </section>
@@ -115,7 +115,7 @@ const Priser = () => (
         </div>
         <div className="text-center mt-12">
           <p className="text-sm text-muted-foreground font-light">
-            Første samtale er altid uforpligtende. Ring eller book online for at komme i gang.
+            Start med en indledende samtale til 300 kr. Ring eller book online.
           </p>
         </div>
       </div>
