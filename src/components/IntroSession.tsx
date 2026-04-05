@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 interface IntroSessionProps {
@@ -6,6 +5,7 @@ interface IntroSessionProps {
   description?: string;
   price?: string;
   image?: string;
+  onBookClick?: () => void;
 }
 
 const IntroSession = ({
@@ -13,6 +13,7 @@ const IntroSession = ({
   description = "En kort, uforpligtende samtale om dine behov og hvordan kropsterapi kan hjælpe dig. Kan foregå via telefon, video eller i klinikken.",
   price = "300 kr.",
   image = "/images/find-ro-4.jpg",
+  onBookClick,
 }: IntroSessionProps) => (
   <section className="relative z-[1] py-16 md:py-24 bg-card">
     <div className="container mx-auto px-4">
@@ -34,12 +35,12 @@ const IntroSession = ({
               <span className="font-heading text-2xl text-foreground">{price}</span>
               <span className="text-muted-foreground text-sm">· 15-20 min</span>
             </div>
-            <Link
-              to="/kontakt"
+            <button
+              onClick={onBookClick}
               className="inline-flex items-center border border-foreground/30 px-10 py-4 text-xs tracking-[0.15em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
             >
               Book en samtale
-            </Link>
+            </button>
           </div>
         </FadeInOnScroll>
       </div>

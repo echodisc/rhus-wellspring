@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
+import BookingModal from "@/components/BookingModal";
 import ProcessSteps from "@/components/ProcessSteps";
 import TestimonialCard from "@/components/TestimonialCard";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
@@ -43,7 +45,9 @@ const faqItems = [
   },
 ];
 
-const Kropsterapi = () => (
+const Kropsterapi = () => {
+  const [bookingOpen, setBookingOpen] = useState(false);
+  return (
   <Layout>
     <Helmet>
       <title>Kropsterapi Behandling i Aarhus | Find Ro med Ida Sohn</title>
@@ -167,7 +171,7 @@ const Kropsterapi = () => (
     <ParallaxImage src="/images/yoga-for-alle.jpg" alt="Yoga for alle" height="min-h-[40vh]" />
 
     <ProcessSteps />
-    <IntroSession />
+    <IntroSession onBookClick={() => setBookingOpen(true)} />
 
     {/* Testimonial */}
     <section className="relative z-[1] py-14 md:py-24 bg-card">
@@ -187,7 +191,9 @@ const Kropsterapi = () => (
 
     <FAQSection items={faqItems} />
     <CTABanner headline="Prøv kropsterapi i Aarhus" subtext="Book din første session og mærk forskellen. Uforpligtende og i dit tempo." />
+    <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
   </Layout>
-);
+  );
+};
 
 export default Kropsterapi;

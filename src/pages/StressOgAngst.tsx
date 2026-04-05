@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
+import BookingModal from "@/components/BookingModal";
 import TestimonialCard from "@/components/TestimonialCard";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import PullQuote from "@/components/PullQuote";
@@ -56,7 +58,9 @@ const faqItems = [
   },
 ];
 
-const StressOgAngst = () => (
+const StressOgAngst = () => {
+  const [bookingOpen, setBookingOpen] = useState(false);
+  return (
   <Layout>
     <Helmet>
       <title>Stress Behandling & Angst Terapi i Aarhus | Find Ro</title>
@@ -138,7 +142,7 @@ const StressOgAngst = () => (
       </div>
     </section>
 
-    <IntroSession />
+    <IntroSession onBookClick={() => setBookingOpen(true)} />
 
     {/* Testimonials */}
     <section className="relative z-[1] py-14 md:py-24 bg-card">
@@ -172,7 +176,9 @@ const StressOgAngst = () => (
       headline="Slip fri af stress og angst"
       subtext="Du fortjener at leve uden konstant uro. Tag det første skridt mod forandring i dag."
     />
+    <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
   </Layout>
-);
+  );
+};
 
 export default StressOgAngst;

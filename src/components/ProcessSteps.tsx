@@ -1,23 +1,26 @@
-import { CalendarCheck, HandHeart, Sparkles } from "lucide-react";
+import { Phone, ClipboardList, HandHeart, Sparkles } from "lucide-react";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 
 const steps = [
   {
-    icon: CalendarCheck,
-    title: "Book din tid",
-    description: "Vælg en tid der passer dig. Du kan booke online eller ringe direkte.",
+    icon: Phone,
+    title: "Indledende samtale",
+    description: "En kort snak om dine behov. Telefon, video eller i klinikken. 300 kr.",
+  },
+  {
+    icon: ClipboardList,
+    title: "Personlig plan",
+    description: "Jeg lægger en plan, skræddersyet til dig og din situation.",
   },
   {
     icon: HandHeart,
     title: "Behandling",
-    description:
-      "En tryg og nærværende session hvor vi arbejder med kroppen og nervesystemet.",
+    description: "Trygge sessioner hvor jeg arbejder med kroppen og nervesystemet.",
   },
   {
     icon: Sparkles,
     title: "Forandring",
-    description:
-      "Mærk hvordan spændinger løsner sig og du finder mere ro i hverdagen.",
+    description: "Mærk hvordan spændinger løsner sig og du finder mere ro.",
   },
 ];
 
@@ -30,7 +33,7 @@ const ProcessSteps = () => (
           Sådan foregår det
         </h2>
       </FadeInOnScroll>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-4xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 max-w-5xl mx-auto">
         {steps.map((s, i) => (
           <FadeInOnScroll key={i} delay={i * 120}>
             <div className="text-center">
