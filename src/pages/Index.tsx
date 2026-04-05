@@ -112,11 +112,11 @@ const Index = () => (
     />
 
     {/* Problem Cards — USP section */}
-    <section className="relative z-[1] py-24 md:py-40 bg-background">
+    <section className="relative z-[1] py-14 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Jeg hjælper dig, der oplever</p>
-          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-10">
             Kender du det?
           </h2>
         </FadeInOnScroll>
