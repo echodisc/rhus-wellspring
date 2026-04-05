@@ -142,7 +142,7 @@ const StressOgAngst = () => {
       </div>
     </section>
 
-    <IntroSession />
+    <IntroSession onBookClick={() => setBookingOpen(true)} />
 
     {/* Testimonials */}
     <section className="relative z-[1] py-14 md:py-24 bg-card">
