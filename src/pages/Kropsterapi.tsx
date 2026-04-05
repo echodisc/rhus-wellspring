@@ -45,7 +45,9 @@ const faqItems = [
   },
 ];
 
-const Kropsterapi = () => (
+const Kropsterapi = () => {
+  const [bookingOpen, setBookingOpen] = useState(false);
+  return (
   <Layout>
     <Helmet>
       <title>Kropsterapi Behandling i Aarhus | Find Ro med Ida Sohn</title>
