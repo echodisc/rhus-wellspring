@@ -40,7 +40,7 @@ const Navbar = () => {
           <li>
             <Link
               to="/kontakt"
-              className="text-[11px] font-light tracking-[0.12em] uppercase text-foreground/70 hover:text-foreground transition-colors"
+              className="text-[11px] font-light tracking-[0.12em] uppercase text-foreground/70 hover:text-foreground transition-colors border-b border-foreground/30 pb-0.5"
             >
               Booking
             </Link>
