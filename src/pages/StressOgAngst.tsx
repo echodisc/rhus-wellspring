@@ -75,7 +75,7 @@ const StressOgAngst = () => (
     />
 
     {/* Intro */}
-    <section className="py-24 md:py-40">
+    <section className="relative z-[1] py-14 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <FadeInOnScroll>
