@@ -88,7 +88,7 @@ const StressOgAngst = () => (
                 ørerne. Stress og angst er ikke bare "noget i hovedet" — det er en kropslig tilstand.
               </p>
               <p className="text-muted-foreground leading-relaxed font-light">
-                Hos Find Ro i Aarhus arbejder vi med det autonome nervesystem for at hjælpe din krop
+                Hos Find Ro i Aarhus arbejder jeg med det autonome nervesystem for at hjælpe din krop
                 ud af alarmberedskab og ind i en tilstand af ro og genopretning.
               </p>
             </div>
