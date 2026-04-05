@@ -58,7 +58,9 @@ const faqItems = [
   },
 ];
 
-const StressOgAngst = () => (
+const StressOgAngst = () => {
+  const [bookingOpen, setBookingOpen] = useState(false);
+  return (
   <Layout>
     <Helmet>
       <title>Stress Behandling & Angst Terapi i Aarhus | Find Ro</title>
