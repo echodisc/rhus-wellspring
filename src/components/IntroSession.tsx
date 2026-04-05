@@ -15,7 +15,7 @@ const IntroSession = ({
   image = "/images/find-ro-4.jpg",
   onBookClick,
 }: IntroSessionProps) => (
-  <section className="relative z-[1] py-16 md:py-24 bg-card">
+  <section className="relative z-[1] py-16 md:py-24 bg-mottled-warm">
     <div className="container mx-auto px-4">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <FadeInOnScroll>
