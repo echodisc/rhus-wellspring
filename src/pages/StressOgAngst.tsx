@@ -110,7 +110,7 @@ const StressOgAngst = () => (
 
     {/* Pull Quote */}
     <PullQuote
-      quote="Du fortjener at leve uden konstant uro. Det starter med at lytte til kroppen."
+      quote="Når nervesystemet finder ro, følger resten med. Du fortjener den ro."
       author="Ida Sohn"
       background="warm"
     />
