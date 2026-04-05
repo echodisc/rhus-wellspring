@@ -191,7 +191,9 @@ const Kropsterapi = () => {
 
     <FAQSection items={faqItems} />
     <CTABanner headline="Prøv kropsterapi i Aarhus" subtext="Book din første session og mærk forskellen. Uforpligtende og i dit tempo." />
+    <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
   </Layout>
-);
+  );
+};
 
 export default Kropsterapi;

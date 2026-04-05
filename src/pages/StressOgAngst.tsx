@@ -176,7 +176,9 @@ const StressOgAngst = () => {
       headline="Slip fri af stress og angst"
       subtext="Du fortjener at leve uden konstant uro. Tag det første skridt mod forandring i dag."
     />
+    <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
   </Layout>
-);
+  );
+};
 
 export default StressOgAngst;
