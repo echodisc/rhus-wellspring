@@ -120,7 +120,7 @@ const StressOgAngst = () => (
       <div className="container mx-auto px-4">
         <FadeInOnScroll>
           <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Tilgang</p>
-          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-16">Min tilgang til stress og angst</h2>
+          <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-10">Min tilgang til stress og angst</h2>
         </FadeInOnScroll>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {approaches.map((a, i) => (

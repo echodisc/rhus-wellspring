@@ -33,10 +33,10 @@ const items: TimelineItem[] = [
 ];
 
 const TimelineSection = () => (
-  <section className="relative z-[1] py-14 md:py-24 bg-mottled-sage">
+  <section className="relative z-[1] py-16 md:py-24 bg-mottled-sage">
     <div className="container mx-auto px-4 max-w-3xl">
       <FadeInOnScroll>
-        <h2 className="font-serif text-3xl md:text-4xl font-semibold text-center mb-14">
+        <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-10">
           Min uddannelsesrejse
         </h2>
       </FadeInOnScroll>
@@ -55,14 +55,14 @@ const TimelineSection = () => (
 
               {/* Content */}
               <div className={`ml-12 md:ml-0 md:w-1/2 ${i % 2 === 0 ? "md:pr-12 md:text-right" : "md:pl-12"}`}>
-                <span className="text-sm font-semibold text-accent">{item.year}</span>
-                <h3 className="font-serif text-xl font-semibold mt-1 mb-2">{item.title}</h3>
+                <span className="text-xs tracking-[0.1em] uppercase text-muted-foreground">{item.year}</span>
+                <h3 className="font-heading text-base tracking-[0.06em] mt-1 mb-2">{item.title}</h3>
                 <p className="text-sm text-muted-foreground leading-relaxed">{item.description}</p>
                 {item.image && (
                   <img
                     src={item.image}
                     alt={item.title}
-                    className="mt-4 rounded-xl w-full max-w-xs object-cover aspect-[4/3] shadow-md"
+                    className="mt-4 w-full max-w-xs object-cover aspect-[4/3]"
                     loading="lazy"
                   />
                 )}
