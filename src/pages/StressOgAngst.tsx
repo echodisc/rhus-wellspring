@@ -14,7 +14,7 @@ const approaches = [
   {
     icon: HeartPulse,
     title: "Nervesystemregulering",
-    text: "Vi arbejder direkte med dit autonome nervesystem for at bringe dig ud af fight-or-flight tilstand.",
+    text: "Jeg arbejder direkte med dit autonome nervesystem for at bringe dig ud af fight-or-flight tilstand.",
   },
   {
     icon: Wind,

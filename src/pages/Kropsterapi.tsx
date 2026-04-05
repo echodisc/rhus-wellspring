@@ -39,7 +39,7 @@ const faqItems = [
   {
     question: "Hvor lang tid tager det at mærke resultat af kropsterapi?",
     answer:
-      "Mange mærker forandring allerede efter første session — typisk en dybere afslapning og bedre søvn. For varige ændringer anbefales et forløb på 5-8 sessioner.",
+      "De fleste mærker forandring allerede efter første session — typisk en dybere afslapning og bedre søvn. For varige ændringer anbefales et forløb på 5-8 sessioner.",
   },
 ];
 

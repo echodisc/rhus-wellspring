@@ -115,7 +115,7 @@ const Priser = () => (
         </div>
         <div className="text-center mt-12">
           <p className="text-sm text-muted-foreground font-light">
-            Første samtale er altid uforpligtende. Ring eller book online for at komme i gang.
+            Start med en indledende samtale til 300 kr. Ring eller book online.
           </p>
         </div>
       </div>

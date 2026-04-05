@@ -54,7 +54,7 @@ const faqItems = [
   {
     question: "Kan kropsterapi hjælpe mod angst og stress?",
     answer:
-      "Ja, kropsterapi er en af de mest effektive tilgange til stress og angst, fordi vi arbejder direkte med nervesystemet. Mange klienter oplever markant reduktion i angstsymptomer og en dybere følelse af ro.",
+      "Ja, kropsterapi er en af de mest effektive tilgange til stress og angst, fordi jeg arbejder direkte med nervesystemet. Mange klienter oplever markant reduktion i angstsymptomer og en dybere følelse af ro.",
   },
   {
     question: "Hvor foregår behandlingerne i Aarhus?",
