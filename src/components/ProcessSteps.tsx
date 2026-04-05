@@ -25,7 +25,7 @@ const steps = [
 ];
 
 const ProcessSteps = () => (
-  <section className="relative z-[1] py-14 md:py-24 bg-card">
+  <section className="relative z-[1] py-14 md:py-24 bg-mottled-sage">
     <div className="container mx-auto px-4">
       <FadeInOnScroll>
         <p className="text-[11px] tracking-[0.15em] uppercase text-center text-muted-foreground mb-4">Processen</p>

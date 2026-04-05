@@ -267,7 +267,7 @@ const Index = () => {
       <IntroSession onBookClick={() => setBookingOpen(true)} />
 
       {/* Testimonials */}
-      <section className="relative z-[1] py-14 md:py-24 bg-card">
+      <section className="relative z-[1] py-14 md:py-24 bg-mottled-peach">
         <div className="container mx-auto px-4">
           <FadeInOnScroll>
             <p className="text-[11px] tracking-[0.15em] uppercase text-muted-foreground text-center mb-4">Udtalelser</p>
