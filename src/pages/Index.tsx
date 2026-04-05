@@ -44,7 +44,7 @@ const faqItems = [
   {
     question: "Hvor mange behandlinger har jeg brug for?",
     answer:
-      "Det er individuelt. Mange oplever forbedring efter 3-5 behandlinger, men for dybere problematikker kan et længere forløb være gavnligt. Vi laver altid en plan sammen efter første session.",
+      "Det er individuelt. Mange oplever forbedring efter 5-8 behandlinger, men for dybere problematikker kan et længere forløb være gavnligt. Vi laver altid en plan sammen efter første session.",
   },
   {
     question: "Hvad koster en behandling hos Find Ro i Aarhus?",
