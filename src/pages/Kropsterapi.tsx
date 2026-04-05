@@ -170,7 +170,7 @@ const Kropsterapi = () => (
     <IntroSession />
 
     {/* Testimonial */}
-    <section className="py-24 md:py-40 bg-card">
+    <section className="relative z-[1] py-14 md:py-24 bg-card">
       <div className="container mx-auto px-4 max-w-3xl">
         <FadeInOnScroll>
           <h2 className="font-heading text-2xl md:text-3xl font-light tracking-[0.04em] text-center mb-12">

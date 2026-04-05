@@ -48,7 +48,7 @@ const Klientudtalelser = () => (
       </div>
     </section>
 
-    <section className="py-24 md:py-40">
+    <section className="relative z-[1] py-14 md:py-24 bg-background">
       <div className="container mx-auto px-4 max-w-5xl">
         <DotCarousel desktopCols={2}>
           {testimonials.map((t, i) => (
