@@ -26,26 +26,26 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop */}
-        <ul className="hidden md:flex items-center gap-8">
-          {navLinks.map((l) => (
-            <li key={l.to}>
-              <Link
-                to={l.to}
-                className="text-[11px] font-light tracking-[0.12em] uppercase text-foreground/70 hover:text-foreground transition-colors"
-              >
-                {l.label}
-              </Link>
-            </li>
-          ))}
-          <li>
-            <Link
-              to="/kontakt"
-              className="text-[11px] font-light tracking-[0.12em] uppercase text-foreground/70 hover:text-foreground transition-colors border-b border-foreground/30 pb-0.5"
-            >
-              Booking
-            </Link>
-          </li>
-        </ul>
+        <div className="hidden md:flex items-center gap-0">
+          <ul className="flex items-center gap-8 mr-12">
+            {navLinks.map((l) => (
+              <li key={l.to}>
+                <Link
+                  to={l.to}
+                  className="text-[11px] font-light tracking-[0.12em] uppercase text-foreground/70 hover:text-foreground transition-colors"
+                >
+                  {l.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link
+            to="/kontakt"
+            className="border border-foreground/30 px-6 py-2 text-[11px] font-light tracking-[0.12em] uppercase text-foreground hover:bg-foreground hover:text-background transition-all duration-300"
+          >
+            Book tid
+          </Link>
+        </div>
 
         {/* Mobile toggle */}
         <button
