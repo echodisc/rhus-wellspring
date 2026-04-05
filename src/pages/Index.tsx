@@ -203,7 +203,7 @@ const Index = () => (
 
     {/* Pull Quote */}
     <PullQuote
-      quote="Jeg har selv stået der — med en krop i alarmberedskab og tanker der aldrig stoppede. Det er den oplevelse, der driver mig."
+      quote="Jeg kender det selv. Det er derfra min tilgang kommer."
       author="Ida Sohn"
       background="sage"
     />
