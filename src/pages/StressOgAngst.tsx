@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/Layout";
 import Hero from "@/components/Hero";
 import FAQSection from "@/components/FAQSection";
 import CTABanner from "@/components/CTABanner";
+import BookingModal from "@/components/BookingModal";
 import TestimonialCard from "@/components/TestimonialCard";
 import FadeInOnScroll from "@/components/FadeInOnScroll";
 import PullQuote from "@/components/PullQuote";
