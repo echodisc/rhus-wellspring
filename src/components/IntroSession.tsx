@@ -14,7 +14,7 @@ const IntroSession = ({
   price = "Gratis",
   image = "/images/find-ro-4.jpg",
 }: IntroSessionProps) => (
-  <section className="py-20 md:py-32 bg-card">
+  <section className="relative z-[1] py-14 md:py-24 bg-card">
     <div className="container mx-auto px-4">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <FadeInOnScroll>
